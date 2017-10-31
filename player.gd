@@ -21,12 +21,18 @@ export(float) var jump_velocity = 12
 export(float) var wall_hang_jump_velocity = 5
 var velocity = Vector3(0,0,0)
 
+export(NodePath) var camera_rig = null
+
 var impact=0
 # Lerped leaning
 var lean_amount = 0
 var target_lean_amount = 0
 var floor_locked = false
 
+const ADVENTURE = 0
+const TACTICAL = 1
+
+var mode = ADVENTURE
 # X = A,D
 # Y = Jump, Crouch
 # Z = W,S
@@ -35,6 +41,12 @@ func _ready():
 	set_fixed_process(true)
 
 func _fixed_process(delta):
+	if Input.is_action_just_pressed("player_toggle_tactical"):
+		if mode != TACTICAL:
+			mode=TACTICAL
+			get_node(camera_rig).get_world_point(true)
+		else:
+			 mode=ADVENTURE
 	
 	var movement = Vector3(0,0,0)
 	if Input.is_key_pressed(KEY_W):
@@ -49,7 +61,20 @@ func _fixed_process(delta):
 	movement.y = 0
 	movement = movement.normalized()
 	
-	movement = get_node("../cam_rig").global_transform.basis * movement
+	if mode == ADVENTURE:
+		movement = get_node("../cam_rig").global_transform.basis * movement
+		get_node("char/anim_tree").blend2_node_set_amount("strafe_blend", 0)
+	elif mode == TACTICAL:
+		var diff = get_node(camera_rig).contact - global_transform.origin
+		
+		if diff.length() > 20 or diff.length() < 1:
+			mode = ADVENTURE
+		
+		movement = get_node("../cam_rig").global_transform.basis * movement
+		
+		diff = diff.normalized()
+		var theta = diff.angle_to(movement)
+		get_node("char/anim_tree").blend2_node_set_amount("strafe_blend", max(min(abs(theta / (PI/2)), 1),0))
 	
 	var hvel = velocity
 	
@@ -107,7 +132,7 @@ func _fixed_process(delta):
 			break
 	
 	lock_to_floor(delta)
-	print("impact: ", impact)
+	
 	if not is_touching_floor() and not is_wall_hanging():
 		air_mod = 0.05  if fmod(get_node("char/wheel").rotation.x, PI/2) >  PI / 4 else 1.25
 		velocity.y += GRAVITY * delta
@@ -128,23 +153,7 @@ func _fixed_process(delta):
 	get_node("hang_shape").disabled = not is_wall_hanging()
 		
 	
-	var old_rotation = Vector2(cos(rotation.y),sin(rotation.y))
-	var new_rotation = Vector2(hvel.z, hvel.x)
-	if is_on_wall():
-		var col = get_slide_collision(0)
-		if col != null:
-			new_rotation = Vector2(-col.normal.x, -col.normal.z)
-	if is_touching_floor():
-		new_rotation = old_rotation.linear_interpolate(Vector2(velocity.z, velocity.x), TURN_RATE * delta)
-	if is_wall_hanging():
-		if get_node("wall_grab_R").is_colliding() and not get_node("wall_grab_L").is_colliding():
-			new_rotation = old_rotation.rotated(-5 * delta)
-		elif not get_node("wall_grab_R").is_colliding() and get_node("wall_grab_L").is_colliding():
-			new_rotation = old_rotation.rotated(5 * delta)
-		else:
-			new_rotation = old_rotation
-	
-	rotation.y = new_rotation.angle()
+	set_y_rotation(hvel,delta)
 	
 	target_lean_amount = (hvel.length() / (max_speed * (SPRINT_MOD if not air else 1))) * 0.3 * (1 if not air else -0.6)
 	lean_amount = lerp(lean_amount, target_lean_amount, delta * 10)
@@ -167,6 +176,37 @@ func _fixed_process(delta):
 			velocity.y = wall_hang_jump_velocity
 		get_node("char/anim_tree").blend2_node_set_amount("fall_blend", 0.7)
 		get_node("char/anim_tree").blend2_node_set_amount("crouch_b", 0.6)
+	
+	var old_hang_blend = get_node("char/anim_tree").blend2_node_get_amount("hang_blend")
+	var new_hang_blend = lerp(old_hang_blend, 1, delta * 23) if is_wall_hanging() else lerp(old_hang_blend, 0, delta * 25)
+	get_node("char/anim_tree").blend2_node_set_amount("hang_blend", new_hang_blend)
+
+func set_y_rotation(hvel,delta):
+	var old_rotation = Vector2(cos(rotation.y),sin(rotation.y))
+	var new_rotation = Vector2(hvel.z, hvel.x)
+	if mode == ADVENTURE:
+		if is_touching_floor():
+			new_rotation = old_rotation.linear_interpolate(Vector2(velocity.z, velocity.x), TURN_RATE * delta)
+		if is_on_wall() :
+			var col = get_slide_collision(0)
+			if col != null:
+				new_rotation = Vector2(hvel.z, hvel.x)
+		if is_wall_hanging():
+			if get_node("wall_grab_R").is_colliding() and not get_node("wall_grab_L").is_colliding():
+				new_rotation = old_rotation.rotated(-5 * delta)
+			elif not get_node("wall_grab_R").is_colliding() and get_node("wall_grab_L").is_colliding():
+				new_rotation = old_rotation.rotated(5 * delta)
+			else:
+				new_rotation = old_rotation
+		
+	elif mode == TACTICAL:
+		var world_point = get_node(camera_rig).contact
+		var mouse_proj_diff =   world_point - global_transform.origin
+		new_rotation = old_rotation.linear_interpolate(Vector2(mouse_proj_diff.z, mouse_proj_diff.x), TURN_RATE * delta)
+	rotation.y = new_rotation.angle()
+	
+func get_mouse_world_point():
+	return get_node(camera_rig).contact
 
 func is_touching_floor():
 	if get_node("floor_lock").is_colliding():

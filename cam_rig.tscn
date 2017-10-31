@@ -2,7 +2,7 @@
 
 [ext_resource path="res://camera.gd" type="Script" id=1]
 
-[sub_resource type="ProceduralSky" id=4]
+[sub_resource type="ProceduralSky" id=1]
 
 radiance_size = 4
 sky_top_color = Color( 0.0470588, 0.454902, 0.976471, 1 )
@@ -22,10 +22,10 @@ sun_curve = 0.05
 sun_energy = 16.0
 texture_size = 2
 
-[sub_resource type="Environment" id=5]
+[sub_resource type="Environment" id=2]
 
 background_mode = 2
-background_sky = SubResource( 4 )
+background_sky = SubResource( 1 )
 background_sky_scale = 1.0
 background_color = Color( 0, 0, 0, 1 )
 background_energy = 1.0
@@ -102,18 +102,21 @@ _sections_unfolded = [ "Ambient Light", "Background", "Glow", "SSAO" ]
 
 [node name="cam_rig" type="Spatial"]
 
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 1.19209e-07 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.19209e-07 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+offset = Vector3( 0, 1, 0 )
+player = null
+camera_speed = 14
 
 [node name="arm" type="Spatial" parent="."]
 
-transform = Transform( 1, 5.69024e-08, 2.10537e-08, -5.69025e-08, 0.759173, 0.650888, 2.10537e-08, -0.650888, 0.759173, 0, 0, -5.96046e-08 )
+transform = Transform( 1, 0, 0, 0, 0.963019, 0.269434, 0, -0.269434, 0.963019, -8.47033e-22, 0, -5.96046e-08 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cam" type="Camera" parent="arm"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.34307 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
 projection = 0
 fov = 65.0
 near = 0.1
@@ -121,7 +124,7 @@ far = 1000.0
 keep_aspect = 1
 current = false
 cull_mask = 1048575
-environment = SubResource( 5 )
+environment = SubResource( 2 )
 h_offset = 0.0
 v_offset = 0.0
 doppler/tracking = 0

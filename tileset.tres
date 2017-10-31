@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Material.material" type="Material" id=1]
 
-[sub_resource type="ArrayMesh" id=22]
+[sub_resource type="ArrayMesh" id=1]
 
 surfaces/0 = {
 "aabb": Rect3( -1, -1, -1, 2, 2.00001, 2.00001 ),
@@ -35,11 +35,11 @@ size = Vector2( 64, 64 )
 storage = 0
 lossy_quality = 0.7
 
-[sub_resource type="ConvexPolygonShape" id=23]
+[sub_resource type="ConvexPolygonShape" id=4]
 
 points = PoolVector3Array( -1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1 )
 
-[sub_resource type="ArrayMesh" id=24]
+[sub_resource type="ArrayMesh" id=5]
 
 surfaces/0 = {
 "aabb": Rect3( -1, -1, -1.2341, 2, 2.08664, 2.98392 ),
@@ -72,7 +72,7 @@ size = Vector2( 64, 64 )
 storage = 0
 lossy_quality = 0.7
 
-[sub_resource type="ArrayMesh" id=25]
+[sub_resource type="ArrayMesh" id=8]
 
 surfaces/0 = {
 "aabb": Rect3( -0.602995, -1.00769, -0.987132, 1.206, 1.96691, 1.98714 ),
@@ -106,11 +106,11 @@ size = Vector2( 64, 64 )
 storage = 0
 lossy_quality = 0.7
 
-[sub_resource type="ConvexPolygonShape" id=26]
+[sub_resource type="ConvexPolygonShape" id=11]
 
 points = PoolVector3Array( 0.6, -1, 1, -0.6, -1, 1, -0.6, 1, -1, 0.6, 1, -1, 0.6, -1, -1, -0.6, -1, -1 )
 
-[sub_resource type="ArrayMesh" id=27]
+[sub_resource type="ArrayMesh" id=12]
 
 surfaces/0 = {
 "aabb": Rect3( -1.06577, -1, -1.00002, 2.06738, 2, 2.03263 ),
@@ -144,11 +144,11 @@ size = Vector2( 64, 64 )
 storage = 0
 lossy_quality = 0.7
 
-[sub_resource type="ConvexPolygonShape" id=28]
+[sub_resource type="ConvexPolygonShape" id=15]
 
 points = PoolVector3Array( 1, -1, -0.999512, -0.974609, 0.993164, -0.999512, 1, 1, -0.999512, -1.06543, -0.996582, -0.652832, -0.974609, 0.993164, -0.999512, -0.99707, -0.999512, -1, 1, 1, -0.999512, 1, -0.999512, 0.999512, 1, -1, -0.999512, -0.974609, 0.993164, -0.999512, -1.00098, 0.989746, -0.377686, 1, 1, -0.999512, -0.476807, 0.4646, 0.529297, -1.00098, 0.989746, -0.377686, -0.583984, -0.999512, 0.162476, 1, 1, -0.999512, -1.00098, 0.989746, -0.377686, 1.00098, 0.975586, 0.994141, 1, -1, -0.999512, 0.730469, -0.999512, 1.01758, -0.583984, -0.999512, 0.162476, 1, 1, -0.999512, 1.00098, 0.975586, 0.994141, 1, -0.999512, 0.999512, -0.476807, 0.4646, 0.529297, 0.802246, 0.895508, 1.03223, -1.00098, 0.989746, -0.377686, 1, -0.999512, 0.999512, 0.802246, 0.895508, 1.03223, 0.730469, -0.999512, 1.01758, -1.06543, -0.996582, -0.652832, -1.00098, 0.989746, -0.377686, -0.974609, 0.993164, -0.999512, -1.00098, 0.989746, -0.377686, 0.802246, 0.895508, 1.03223, 1.00098, 0.975586, 0.994141, 1, -1, -0.999512, -0.99707, -0.999512, -1, -0.974609, 0.993164, -0.999512, -0.583984, -0.999512, 0.162476, -1.06543, -0.996582, -0.652832, 1, -1, -0.999512, 0.730469, -0.999512, 1.01758, -0.476807, 0.4646, 0.529297, -0.583984, -0.999512, 0.162476, 1, -0.999512, 0.999512, 0.730469, -0.999512, 1.01758, 1, -1, -0.999512, -0.99707, -0.999512, -1, 1, -1, -0.999512, -1.06543, -0.996582, -0.652832, -0.583984, -0.999512, 0.162476, -1.00098, 0.989746, -0.377686, -1.06543, -0.996582, -0.652832, 1, -0.999512, 0.999512, 1.00098, 0.975586, 0.994141, 0.802246, 0.895508, 1.03223, 0.730469, -0.999512, 1.01758, 0.802246, 0.895508, 1.03223, -0.476807, 0.4646, 0.529297 )
 
-[sub_resource type="ArrayMesh" id=29]
+[sub_resource type="ArrayMesh" id=16]
 
 surfaces/0 = {
 "aabb": Rect3( -1, -1, -1, 2, 2, 2.0703 ),
@@ -182,7 +182,7 @@ size = Vector2( 64, 64 )
 storage = 0
 lossy_quality = 0.7
 
-[sub_resource type="ArrayMesh" id=30]
+[sub_resource type="ArrayMesh" id=19]
 
 surfaces/0 = {
 "aabb": Rect3( -2, -1, -0.606278, 3.27232, 2.00001, 1.27472 ),
@@ -216,35 +216,35 @@ size = Vector2( 64, 64 )
 storage = 0
 lossy_quality = 0.7
 
-[sub_resource type="ConvexPolygonShape" id=31]
+[sub_resource type="ConvexPolygonShape" id=22]
 
 points = PoolVector3Array( 0.6, -1, 2, -0.6, -1, 2, -0.6, 1, -2, 0.6, 1, -2, 0.6, -1, -2, -0.6, -1, -2 )
 
 [resource]
 
 item/0/name = "Cube.003"
-item/0/mesh = SubResource( 22 )
-item/0/shapes = [ SubResource( 23 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
+item/0/mesh = SubResource( 1 )
+item/0/shapes = [ SubResource( 4 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
 item/0/preview = SubResource( 3 )
 item/1/name = "Cylinder"
-item/1/mesh = SubResource( 24 )
+item/1/mesh = SubResource( 5 )
 item/1/shapes = [  ]
 item/1/preview = SubResource( 7 )
 item/2/name = "Cube.002"
-item/2/mesh = SubResource( 25 )
-item/2/shapes = [ SubResource( 26 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
+item/2/mesh = SubResource( 8 )
+item/2/shapes = [ SubResource( 11 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
 item/2/preview = SubResource( 10 )
 item/3/name = "Cube.001"
-item/3/mesh = SubResource( 27 )
-item/3/shapes = [ SubResource( 28 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
+item/3/mesh = SubResource( 12 )
+item/3/shapes = [ SubResource( 15 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
 item/3/preview = SubResource( 14 )
 item/4/name = "Cube"
-item/4/mesh = SubResource( 29 )
-item/4/shapes = [ SubResource( 23 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
+item/4/mesh = SubResource( 16 )
+item/4/shapes = [ SubResource( 4 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
 item/4/preview = SubResource( 18 )
 item/5/name = "Cube2"
-item/5/mesh = SubResource( 30 )
-item/5/shapes = [ SubResource( 31 ), Transform( -4.37114e-08, -1.94839e-11, 1, -0.00044574, 1, 0, -1, -0.00044574, -4.37114e-08, 0, 0, 0 ) ]
+item/5/mesh = SubResource( 19 )
+item/5/shapes = [ SubResource( 22 ), Transform( -4.37114e-08, -1.94839e-11, 1, -0.00044574, 1, 0, -1, -0.00044574, -4.37114e-08, 0, 0, 0 ) ]
 item/5/preview = SubResource( 21 )
 _sections_unfolded = [ "item" ]
 

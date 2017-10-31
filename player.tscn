@@ -1,35 +1,20 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://goodman_char.tscn" type="PackedScene" id=2]
 
-[sub_resource type="CylinderMesh" id=1]
-
-top_radius = 0.7
-bottom_radius = 0.7
-height = 0.1
-radial_segments = 4
-rings = 4
-
-[sub_resource type="CubeMesh" id=2]
-
-size = Vector3( 0.1, 0.1, 0.1 )
-subdivide_width = 0
-subdivide_height = 0
-subdivide_depth = 0
-
-[sub_resource type="PlaneMesh" id=3]
+[sub_resource type="PlaneMesh" id=1]
 
 size = Vector2( 16, 9 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[sub_resource type="CapsuleShape" id=8]
+[sub_resource type="CapsuleShape" id=2]
 
 radius = 0.201002
 height = 0.607891
 
-[sub_resource type="CapsuleShape" id=9]
+[sub_resource type="CapsuleShape" id=3]
 
 radius = 0.178983
 height = 0.496791
@@ -55,6 +40,7 @@ impact_time = 0.1
 crouch_time = 0.15
 jump_velocity = 12
 wall_hang_jump_velocity = 12.0
+camera_rig = null
 
 [node name="char" parent="." instance=ExtResource( 2 )]
 
@@ -64,58 +50,6 @@ transform = Transform( 0.0993125, 0, 0, 0, 0.0993125, 0, 0, 0, 0.0993125, 0, -0.
 
 transform = Transform( 10.0692, 0, 0, 0, 10.0692, 0, 0, 0, 10.0692, 0, 6.79784, 0 )
 _sections_unfolded = [ "Transform" ]
-
-[node name="walk_wheel" type="MeshInstance" parent="char/wheel"]
-
-editor/display_folded = true
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
-visible = false
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
-skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "Transform" ]
-
-[node name="MeshInstance" type="MeshInstance" parent="char/wheel/walk_wheel"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.509544, 0.179471, 0.504422 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 5.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
-skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "LOD" ]
-
-[node name="MeshInstance3" type="MeshInstance" parent="char/wheel/walk_wheel"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504941, -0.310215, -0.520778 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
-skeleton = NodePath("..")
-material/0 = null
 
 [node name="weapon_box" type="MeshInstance" parent="char"]
 
@@ -130,21 +64,21 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
 
 [node name="hang_shape" type="CollisionShape" parent="."]
 
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0147561, 0.35191, 0.38987 )
-shape = SubResource( 8 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0147561, 0.35191, 0.63279 )
+shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.249409, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 3 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
@@ -157,7 +91,7 @@ type_mask = 1
 
 [node name="wall_grab_L" type="RayCast" parent="."]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374164, 0.305866, 0.484359 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.502145, 0.305866, 0.429635 )
 enabled = true
 cast_to = Vector3( 0, -0.2, 0 )
 collision_layer = 1
@@ -165,7 +99,7 @@ type_mask = 1
 
 [node name="wall_grab_R" type="RayCast" parent="."]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343541, 0.305866, 0.484359 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.457377, 0.305866, 0.429635 )
 enabled = true
 cast_to = Vector3( 0, -0.2, 0 )
 collision_layer = 1
