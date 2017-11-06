@@ -20,34 +20,34 @@ var far_plane = 1000
 var contact = Vector3(0,0,0)
 var collider = null
 
-var zoom = 6
+var zoom = 5
 
 export(float) var camera_speed = 14
 
 func _ready():
-	set_fixed_process(true)
+	set_physics_process(true)
 
 func get_world_point(force=false,tags=["floor"]):
 	var ds = PhysicsServer.space_get_direct_state(get_world().get_space())
-	if Input.is_action_just_pressed("player_retarget_tactical") or force:
-		from = get_camera().project_ray_origin(get_viewport().get_mouse_position())
-		to = from + get_camera().project_ray_normal(get_viewport().get_mouse_position())*far_plane
-		var col = ds.intersect_ray(from, to)
-		
-		if("collider" in col.keys()):
-			for tag in tags:
-				if col["collider"].is_in_group(tag):
-					collider = col["collider"]
-					contact = col["position"]
-					return
+	from = get_camera().project_ray_origin(get_viewport().get_mouse_position())
+	to = from + get_camera().project_ray_normal(get_viewport().get_mouse_position())*far_plane
+	var col = ds.intersect_ray(from, to)
+	
+	if("collider" in col.keys()):
+		for tag in tags:
+			if col["collider"].is_in_group(tag):
+				collider = col["collider"]
+				contact = col["position"]
+				return contact
 
-func _fixed_process(delta):
-	get_world_point()
+func _physics_process(delta):
+	if Input.is_action_just_pressed("player_retarget_tactical"):
+		get_world_point()
+		if contact != null:
+			get_node("target").global_transform.origin = contact
 	var new_position = global_transform.origin
 	if player != null:
-		new_position = get_node(player).global_transform.origin + offset
-	if get_node(player).mode == get_node(player).TACTICAL:
-		new_position = (contact - get_node(player).global_transform.origin)/4  +get_node(player).global_transform.origin
+		new_position = get_node(player).global_transform.origin
 	if Input.is_action_just_pressed("camera_pan"):
 		control = true
 		start_point = get_viewport().get_mouse_position()
@@ -66,9 +66,9 @@ func _fixed_process(delta):
 	
 	if Input.is_action_pressed("zoom_in"):
 		print("Zooming In:")
-		zoom = max(zoom - delta, 0)
+		zoom = max(zoom - 12*delta, 0)
 	if Input.is_action_pressed("zoom_out"):
-		zoom = min(zoom + delta, 10)
+		zoom = min(zoom + 12*delta, 100)
 	
 	get_node("arm").rotate_x(velocity.y * delta)
 	get_node("arm").rotation.x = min(max(get_node("arm").rotation.x, deg2rad(-90)), deg2rad(-15))

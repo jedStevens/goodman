@@ -37,7 +37,7 @@ surfaces/0 = {
 }
 custom_aabb/custom_aabb = Rect3( 0, 0, 0, 0, 0, 0 )
 
-[sub_resource type="ArrayMesh" id=6]
+[sub_resource type="ArrayMesh" id=4]
 
 surfaces/0 = {
 "aabb": Rect3( -1.06577, -1, -1.00002, 2.06738, 2, 2.03263 ),
@@ -53,11 +53,11 @@ surfaces/0 = {
 }
 custom_aabb/custom_aabb = Rect3( 0, 0, 0, 0, 0, 0 )
 
-[sub_resource type="ConvexPolygonShape" id=7]
+[sub_resource type="ConvexPolygonShape" id=5]
 
 points = PoolVector3Array( 1, -1, -0.999512, -0.974609, 0.993164, -0.999512, 1, 1, -0.999512, -1.06543, -0.996582, -0.652832, -0.974609, 0.993164, -0.999512, -0.99707, -0.999512, -1, 1, 1, -0.999512, 1, -0.999512, 0.999512, 1, -1, -0.999512, -0.974609, 0.993164, -0.999512, -1.00098, 0.989746, -0.377686, 1, 1, -0.999512, -0.476807, 0.4646, 0.529297, -1.00098, 0.989746, -0.377686, -0.583984, -0.999512, 0.162476, 1, 1, -0.999512, -1.00098, 0.989746, -0.377686, 1.00098, 0.975586, 0.994141, 1, -1, -0.999512, 0.730469, -0.999512, 1.01758, -0.583984, -0.999512, 0.162476, 1, 1, -0.999512, 1.00098, 0.975586, 0.994141, 1, -0.999512, 0.999512, -0.476807, 0.4646, 0.529297, 0.802246, 0.895508, 1.03223, -1.00098, 0.989746, -0.377686, 1, -0.999512, 0.999512, 0.802246, 0.895508, 1.03223, 0.730469, -0.999512, 1.01758, -1.06543, -0.996582, -0.652832, -1.00098, 0.989746, -0.377686, -0.974609, 0.993164, -0.999512, -1.00098, 0.989746, -0.377686, 0.802246, 0.895508, 1.03223, 1.00098, 0.975586, 0.994141, 1, -1, -0.999512, -0.99707, -0.999512, -1, -0.974609, 0.993164, -0.999512, -0.583984, -0.999512, 0.162476, -1.06543, -0.996582, -0.652832, 1, -1, -0.999512, 0.730469, -0.999512, 1.01758, -0.476807, 0.4646, 0.529297, -0.583984, -0.999512, 0.162476, 1, -0.999512, 0.999512, 0.730469, -0.999512, 1.01758, 1, -1, -0.999512, -0.99707, -0.999512, -1, 1, -1, -0.999512, -1.06543, -0.996582, -0.652832, -0.583984, -0.999512, 0.162476, -1.00098, 0.989746, -0.377686, -1.06543, -0.996582, -0.652832, 1, -0.999512, 0.999512, 1.00098, 0.975586, 0.994141, 0.802246, 0.895508, 1.03223, 0.730469, -0.999512, 1.01758, 0.802246, 0.895508, 1.03223, -0.476807, 0.4646, 0.529297 )
 
-[sub_resource type="ArrayMesh" id=20]
+[sub_resource type="ArrayMesh" id=6]
 
 surfaces/0 = {
 "aabb": Rect3( -1, -1, -1, 2, 2, 2.0703 ),
@@ -73,7 +73,7 @@ surfaces/0 = {
 }
 custom_aabb/custom_aabb = Rect3( 0, 0, 0, 0, 0, 0 )
 
-[sub_resource type="ArrayMesh" id=9]
+[sub_resource type="ArrayMesh" id=7]
 
 surfaces/0 = {
 "aabb": Rect3( -2, -1, -0.606278, 3.27232, 2.00001, 1.27472 ),
@@ -89,7 +89,7 @@ surfaces/0 = {
 }
 custom_aabb/custom_aabb = Rect3( 0, 0, 0, 0, 0, 0 )
 
-[sub_resource type="ConvexPolygonShape" id=5]
+[sub_resource type="ConvexPolygonShape" id=8]
 
 points = PoolVector3Array( 0.6, -1, 2, -0.6, -1, 2, -0.6, 1, -2, 0.6, 1, -2, 0.6, -1, -2, -0.6, -1, -2 )
 
@@ -157,7 +157,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
+mesh = SubResource( 4 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 _sections_unfolded = [ "material" ]
@@ -175,7 +175,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube.001/StaticBody2"]
 
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="Cube" type="MeshInstance" parent="."]
@@ -189,7 +189,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 20 )
+mesh = SubResource( 6 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 _sections_unfolded = [ "material" ]
@@ -223,7 +223,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 9 )
+mesh = SubResource( 7 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -243,7 +243,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape" type="CollisionShape" parent="Cube2/StaticBody"]
 
 transform = Transform( -4.37114e-08, -1.94839e-11, 1, -0.00044574, 1, 0, -1, -0.00044574, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 8 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 

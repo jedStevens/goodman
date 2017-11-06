@@ -1,4 +1,4 @@
-extends RigidBody
+extends StaticBody
 
 # class member variables go here, for example:
 # var a = 2
@@ -7,9 +7,9 @@ extends RigidBody
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	set_fixed_process(true)
+	set_physics_process(true)
 
-func _fixed_process(delta):
+func _physics_process(delta):
 	for b in get_colliding_bodies():
 		print(b.get_name())
 		if b.is_in_group("player"):
