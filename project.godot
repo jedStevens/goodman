@@ -10,10 +10,14 @@ config_version=3
 
 [application]
 
-config/name="Project BLK"
+config/name="War On Riverfell"
 run/main_scene="res://main_menu.tscn"
 boot_splash/image="res://bootsplash.png"
 config/icon="res://splash.png"
+
+[debug]
+
+settings/fps/force_fps=60
 
 [gdnative]
 
@@ -54,5 +58,5 @@ player_action_right=[ Object(InputEventMouseButton,"resource_local_to_scene":fal
 threads/thread_model=2
 quality/shadows/filter_mode=2
 environment/default_clear_color=Color( 0, 0, 0, 1 )
-quality/filters/msaa=3
+quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Rok Nardin - Hell Rising - WoR Version.ogg-d9f5714fbee97800825d89f70789d9e7.oggstr"
+
+[deps]
+
+source_md5="dd465b298a8d6ca8835c4ba17fc3bfbe"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,15 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Material_001.material" type="Material" id=1]
-[ext_resource path="res://skin.tres" type="Material" id=2]
-[ext_resource path="res://ik_affector.tscn" type="PackedScene" id=3]
-[ext_resource path="res://goodman/anims/crouch.tres" type="Animation" id=4]
-[ext_resource path="res://goodman/anims/fall.tres" type="Animation" id=5]
-[ext_resource path="res://goodman/anims/hang.tres" type="Animation" id=6]
-[ext_resource path="res://goodman/anims/idle.tres" type="Animation" id=7]
-[ext_resource path="res://goodman/anims/goodman_char.tres" type="Animation" id=8]
-[ext_resource path="res://goodman/anims/stop.tres" type="Animation" id=9]
-[ext_resource path="res://goodman/anims/t_pos.tres" type="Animation" id=10]
+[ext_resource path="res://ik_affector.tscn" type="PackedScene" id=1]
+[ext_resource path="res://goodman/anims/crouch.tres" type="Animation" id=2]
+[ext_resource path="res://goodman/anims/fall.tres" type="Animation" id=3]
+[ext_resource path="res://goodman/anims/hang.tres" type="Animation" id=4]
+[ext_resource path="res://goodman/anims/idle.tres" type="Animation" id=5]
+[ext_resource path="res://goodman/anims/goodman_char.tres" type="Animation" id=6]
+[ext_resource path="res://goodman/anims/stop.tres" type="Animation" id=7]
+[ext_resource path="res://goodman/anims/t_pos.tres" type="Animation" id=8]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -21,7 +19,6 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 98243,
 "index_count": 2793,
-"material": ExtResource( 1 ),
 "name": "Material.001",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -149,10 +146,10 @@ lod_max_distance = 2.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 1 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 2 )
+material/0 = null
 _sections_unfolded = [ "Geometry", "LOD", "material" ]
 
-[node name="left_hand" parent="skin/Skeleton" instance=ExtResource( 3 )]
+[node name="left_hand" parent="skin/Skeleton" instance=ExtResource( 1 )]
 
 visible = false
 
@@ -164,7 +161,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78405, 3.60335, 4.34962 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77723, 2.99156, 5.63505 )
 
-[node name="right_hand" parent="skin/Skeleton" instance=ExtResource( 3 )]
+[node name="right_hand" parent="skin/Skeleton" instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94237, 5.51287, 2.91927 )
 visible = false
@@ -172,10 +169,10 @@ bone = "right_hand"
 
 [node name="r_foot_contact" type="BoneAttachment" parent="skin/Skeleton"]
 
-transform = Transform( -0.953498, -0.0644523, 0.294426, 0.266825, 0.273772, 0.924043, -0.140162, 0.959633, -0.243845, -0.60567, -4.1493, 0.504949 )
+transform = Transform( -0.957543, -0.208847, 0.198732, -0.286905, 0.757816, -0.586005, -0.0282167, -0.618143, -0.785561, -0.108866, -2.04434, 6.566 )
 bone_name = "right_toes"
 
-[node name="right_foot" parent="skin/Skeleton" instance=ExtResource( 3 )]
+[node name="right_foot" parent="skin/Skeleton" instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94237, -3.79114, 2.91927 )
 visible = false
@@ -183,10 +180,10 @@ bone = "right_foot"
 
 [node name="l_foot_contact" type="BoneAttachment" parent="skin/Skeleton"]
 
-transform = Transform( -0.988558, 0.127556, -0.0805097, 0.0874614, 0.919585, 0.383033, 0.122894, 0.37161, -0.920219, 1.11086, -5.26426, -2.51083 )
+transform = Transform( -0.984404, 0.0614588, 0.164838, 0.175841, 0.372209, 0.91134, -0.00534354, 0.926111, -0.377211, 0.499519, -0.304494, -6.59829 )
 bone_name = "left_toes"
 
-[node name="left_foot" parent="skin/Skeleton" instance=ExtResource( 3 )]
+[node name="left_foot" parent="skin/Skeleton" instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.19398, -3.79114, 2.20185 )
 visible = false
@@ -194,7 +191,7 @@ bone = "left_foot"
 
 [node name="left_hand_attach" type="BoneAttachment" parent="skin/Skeleton"]
 
-transform = Transform( -0.993852, -0.070189, 0.0856258, 0.0429149, 0.468695, 0.882315, -0.102062, 0.880566, -0.462803, 2.62552, 0.606824, 2.60189 )
+transform = Transform( -0.993958, -0.0746748, 0.0804383, -0.0860683, 0.98508, -0.149017, -0.0681107, -0.15504, -0.985558, 2.64812, 3.89259, 5.52923 )
 bone_name = "left_hand"
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -202,13 +199,13 @@ bone_name = "left_hand"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 root_node = NodePath("..")
-anims/crouch = ExtResource( 4 )
-anims/fall = ExtResource( 5 )
-anims/hang = ExtResource( 6 )
-anims/idle = ExtResource( 7 )
-anims/run = ExtResource( 8 )
-anims/stop = ExtResource( 9 )
-anims/t_pos = ExtResource( 10 )
+anims/crouch = ExtResource( 2 )
+anims/fall = ExtResource( 3 )
+anims/hang = ExtResource( 4 )
+anims/idle = ExtResource( 5 )
+anims/run = ExtResource( 6 )
+anims/stop = ExtResource( 7 )
+anims/t_pos = ExtResource( 8 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -222,7 +219,7 @@ base_path = NodePath("..")
 master_player = NodePath("../anim")
 data = {
 "active": true,
-"connections": [ "anim 5", "scale", 0, "hang_blend", "out", 0, "anim 7", "blend2 3", 0, "anim 6", "blend2 3", 1, "crouch_b", "fall_blend", 0, "blend2 2", "fall_blend", 1, "scale", "blend2 2", 0, "anim 4", "blend2 2", 1, "strafe_blend", "idle_b_run", 0, "idle", "idle_b_run", 1, "run", "run_seek", 0, "fall_blend", "hang_blend", 0, "anim 8", "hang_blend", 1, "run_seek", "strafe_blend", 0, "blend2 3", "strafe_blend", 1, "stop_b_run", "crouch_b", 0, "anim 3", "crouch_b", 1, "idle_b_run", "stop_b_run", 0, "anim", "stop_b_run", 1 ],
+"connections": [ "anim 5", "scale", 0, "hang_blend", "out", 0, "anim 7", "blend2 3", 0, "anim 6", "blend2 3", 1, "strafe_blend", "idle_b_run", 0, "idle", "idle_b_run", 1, "stop_b_run", "crouch_b", 0, "anim 3", "crouch_b", 1, "fall_blend", "hang_blend", 0, "anim 8", "hang_blend", 1, "idle_b_run", "stop_b_run", 0, "anim", "stop_b_run", 1, "run_seek", "strafe_blend", 0, "blend2 3", "strafe_blend", 1, "run", "run_seek", 0, "crouch_b", "fall_blend", 0, "blend2 2", "fall_blend", 1, "scale", "blend2 2", 0, "anim 4", "blend2 2", 1 ],
 "master": NodePath("../anim"),
 "nodes": [ {
 "id": "scale",
@@ -247,9 +244,9 @@ data = {
 "type": "output"
 }, {
 "filter": [  ],
-"from": "hang",
-"id": "anim 8",
-"position": Vector2( 937, 157 ),
+"from": "run",
+"id": "run",
+"position": Vector2( 130, 12 ),
 "type": "animation"
 }, {
 "blend": 0.54,
@@ -258,11 +255,69 @@ data = {
 "position": Vector2( 274, 110 ),
 "type": "blend2"
 }, {
+"blend": 0.0,
+"filter": [  ],
+"id": "idle_b_run",
+"position": Vector2( 534, 5 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "run",
+"id": "anim 5",
+"position": Vector2( 189, 259 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "crouch_b",
+"position": Vector2( 811, 9 ),
+"type": "blend2"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "hang_blend",
+"position": Vector2( 1073, 9 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "run",
+"id": "anim 7",
+"position": Vector2( 145, 118 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "hang",
+"id": "anim 8",
+"position": Vector2( 937, 157 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [ NodePath("skin/skel:left_forearm"), NodePath("skin/skel:right_hand"), NodePath("skin/skel:right_bicep"), NodePath("skin/skel:left_shoulder"), NodePath("skin/skel:right_forearm"), NodePath("skin/skel:right_shoulder"), NodePath("skin/skel:left_hand"), NodePath("skin/skel:left_bicep") ],
+"id": "stop_b_run",
+"position": Vector2( 658, 9 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "crouch",
+"id": "anim 6",
+"position": Vector2( 31, 178 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "strafe_blend",
+"position": Vector2( 385, 7 ),
+"type": "blend2"
+}, {
 "filter": [  ],
 "from": "hang",
 "id": "anim 4",
 "position": Vector2( 236, 376 ),
 "type": "animation"
+}, {
+"id": "run_seek",
+"position": Vector2( 241, 13 ),
+"type": "timeseek"
 }, {
 "blend": 0.0,
 "filter": [  ],
@@ -276,68 +331,10 @@ data = {
 "position": Vector2( 808, 152 ),
 "type": "blend2"
 }, {
-"blend": 0.0,
-"filter": [  ],
-"id": "idle_b_run",
-"position": Vector2( 534, 5 ),
-"type": "blend2"
-}, {
-"id": "run_seek",
-"position": Vector2( 241, 13 ),
-"type": "timeseek"
-}, {
-"filter": [  ],
-"from": "run",
-"id": "anim 5",
-"position": Vector2( 189, 259 ),
-"type": "animation"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "hang_blend",
-"position": Vector2( 1073, 9 ),
-"type": "blend2"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "strafe_blend",
-"position": Vector2( 385, 7 ),
-"type": "blend2"
-}, {
-"filter": [  ],
-"from": "run",
-"id": "anim 7",
-"position": Vector2( 145, 118 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "crouch",
-"id": "anim 6",
-"position": Vector2( 31, 178 ),
-"type": "animation"
-}, {
 "filter": [  ],
 "from": "crouch",
 "id": "anim 3",
 "position": Vector2( 667, 159 ),
-"type": "animation"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "crouch_b",
-"position": Vector2( 811, 9 ),
-"type": "blend2"
-}, {
-"blend": 0.0,
-"filter": [ NodePath("skin/skel:left_forearm"), NodePath("skin/skel:left_shoulder"), NodePath("skin/skel:right_bicep"), NodePath("skin/skel:right_hand"), NodePath("skin/skel:right_forearm"), NodePath("skin/skel:right_shoulder"), NodePath("skin/skel:left_bicep"), NodePath("skin/skel:left_hand") ],
-"id": "stop_b_run",
-"position": Vector2( 658, 9 ),
-"type": "blend2"
-}, {
-"filter": [  ],
-"from": "run",
-"id": "run",
-"position": Vector2( 130, 12 ),
 "type": "animation"
 } ]
 }
