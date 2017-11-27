@@ -1,0 +1,150 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://torch.gd" type="Script" id=1]
+[ext_resource path="res://fire.tres" type="Material" id=2]
+
+[sub_resource type="CylinderMesh" id=13]
+
+top_radius = 0.2
+bottom_radius = 0.1
+height = 1.0
+radial_segments = 64
+rings = 4
+
+[sub_resource type="Gradient" id=18]
+
+offsets = PoolRealArray( 0, 0.349112, 0.497041, 0.757396 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.421875, 0, 1, 0.261719, 0.12046, 0.0173798, 1, 0.308594, 0.308594, 0.308594, 1 )
+
+[sub_resource type="GradientTexture" id=19]
+
+gradient = SubResource( 18 )
+width = 2048
+
+[sub_resource type="Curve" id=14]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=15]
+
+width = 2048
+curve = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = false
+spread = 3.42
+flatness = 0.0
+gravity = Vector3( 0, 3, 0 )
+initial_velocity = 0.36
+initial_velocity_random = 0.43
+angular_velocity = 191.09
+angular_velocity_random = 0.95
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.21
+linear_accel_random = 0.0
+radial_accel = 0.1
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 360.1
+angle_random = 1.0
+scale = 0.32
+scale_random = 0.65
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 19 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Damping", "Emission Shape", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Radial Accel", "Scale", "Spread" ]
+
+[sub_resource type="QuadMesh" id=20]
+
+material = ExtResource( 2 )
+size = Vector2( 1, 1 )
+
+[node name="torch" type="MeshInstance"]
+
+transform = Transform( 0.996635, 0.0818243, 0.00477975, -0.0811393, 0.976682, 0.19877, 0.0115959, -0.198489, 0.980035, 5.3061, 0.0950608, -0.913774 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 13 )
+skeleton = NodePath("..")
+material/0 = null
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Particles" type="Particles" parent="."]
+
+transform = Transform( 0.999863, 0.000700421, 0.0165223, 0.00261952, 0.979781, -0.200056, -0.0163283, 0.200071, 0.979645, -0.0534229, 0.651375, -0.000827789 )
+layers = 1
+material_override = null
+cast_shadow = 0
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+emitting = true
+amount = 128
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 0.4
+explosiveness = 0.02
+randomness = 0.89
+fixed_fps = 0
+fract_delta = true
+visibility_aabb = Rect3( -4, -4.8125, -4, 8, 8, 8 )
+local_coords = false
+draw_order = 2
+process_material = SubResource( 16 )
+draw_passes = 1
+draw_pass_1 = SubResource( 20 )
+_sections_unfolded = [ "Draw Passes", "Drawing", "Geometry", "Process Material", "Time" ]
+
+[node name="OmniLight" type="OmniLight" parent="."]
+
+transform = Transform( 0.996635, -0.0811393, 0.0115959, 0.0818243, 0.976681, -0.198489, 0.00477975, 0.198769, 0.980034, 0.140369, 0.817023, -0.238297 )
+layers = 1
+light_color = Color( 1, 0.585938, 0, 1 )
+light_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Omni", "Shadow" ]
+
+

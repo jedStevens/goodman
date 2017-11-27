@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/arm.dae-c3802c6efee7606141d66419cff269c7.scn"
 
+[deps]
+
+source_md5="54409c36154bfd290299439f25d55f75"
+
 [params]
 
 nodes/root_type="Spatial"

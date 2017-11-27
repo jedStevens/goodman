@@ -5,6 +5,10 @@ type="StreamTexture"
 path.s3tc="res://.import/wood_2.png-bb894ca5b91425af4b2931455fe735fe.s3tc.stex"
 path.etc2="res://.import/wood_2.png-bb894ca5b91425af4b2931455fe735fe.etc2.stex"
 
+[deps]
+
+source_md5="2baefb511314c7822d502c546b3fe2ad"
+
 [params]
 
 compress/mode=2

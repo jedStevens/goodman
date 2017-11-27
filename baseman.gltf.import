@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/baseman.gltf-79c55a96828600c904096b4ba028c832.scn"
 
+[deps]
+
+source_md5="5314b3175b8c745363838fa9388b1c71"
+
 [params]
 
 nodes/root_type="Spatial"

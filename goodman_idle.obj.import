@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/goodman_idle.obj-6747ee68af940a05cfcbb8ed226d7fec.scn"
 
+[deps]
+
+source_md5="75dde9cda48262dfadf91f9af9cac792"
+
 [params]
 
 nodes/root_type="Spatial"

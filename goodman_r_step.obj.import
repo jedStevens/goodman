@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/goodman_r_step.obj-911efe59fc98875657b37e6b865bef83.scn"
 
+[deps]
+
+source_md5="80f3e7984e223fa22d957993570ca637"
+
 [params]
 
 nodes/root_type="Spatial"

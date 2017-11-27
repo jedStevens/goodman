@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/tribe_shoulder.dae-d799c7db9c805cddab7b108afa4f21ca.scn"
 
+[deps]
+
+source_md5="b470c089fe96cfe295cb1702a58955fa"
+
 [params]
 
 nodes/root_type="Spatial"

@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/tree_tribe_mask.gltf-2d0ece25afb5a204033bc5a2fd6a8be3.scn"
 
+[deps]
+
+source_md5="497463ed40226ceaa22a48068f12c98e"
+
 [params]
 
 nodes/root_type="Spatial"

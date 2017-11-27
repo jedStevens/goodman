@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/wand.obj-61dcfb720db67c1c11ca815f38831fdf.scn"
 
+[deps]
+
+source_md5="d18b1695dbda83bd1c8c96381f0b886b"
+
 [params]
 
 nodes/root_type="Spatial"

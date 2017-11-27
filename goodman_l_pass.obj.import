@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/goodman_l_pass.obj-0ef0cf596028e3330000869b771d838e.scn"
 
+[deps]
+
+source_md5="24e478fa596e2c31a504693e60e4c53a"
+
 [params]
 
 nodes/root_type="Spatial"

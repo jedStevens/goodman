@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/goodman.gltf-7cdb59c9cf3fee282cf4865076ca9c99.scn"
 
+[deps]
+
+source_md5="c580c465906dd0336b9c45ddab7272a3"
+
 [params]
 
 nodes/root_type="Spatial"

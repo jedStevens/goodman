@@ -1,30 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://goodman_char.tscn" type="PackedScene" id=2]
-[ext_resource path="res://debug.tres" type="Material" id=3]
-[ext_resource path="res://input_cirlce.gd" type="Script" id=4]
+[ext_resource path="res://input_cirlce.gd" type="Script" id=3]
 
-[sub_resource type="SphereMesh" id=4]
+[sub_resource type="CapsuleShape" id=1]
 
-radius = 5.0
-height = 2.0
-radial_segments = 64
-rings = 32
-is_hemisphere = false
-
-[sub_resource type="PlaneMesh" id=1]
-
-size = Vector2( 16, 9 )
-subdivide_width = 0
-subdivide_depth = 0
-
-[sub_resource type="CapsuleShape" id=2]
-
-radius = 0.160894
+radius = 0.0404735
 height = 1.0
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=2]
 
 radius = 0.178983
 height = 0.496791
@@ -41,7 +26,7 @@ collision_mask = 1
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-GRAVITY = -24.8
+GRAVITY = -34.8
 max_speed = 7
 deaccel_pose_map = null
 fall_time = 0.2
@@ -49,92 +34,72 @@ fall_recover_time = 0.05
 impact_time = 0.1
 crouch_time = 0.15
 jump_velocity = 12
-wall_hang_jump_velocity = 12.0
+wall_hang_jump_velocity = 24
 camera_rig = null
 
 [node name="char" parent="." instance=ExtResource( 2 )]
 
-transform = Transform( 0.0993125, 0, 0, 0, 0.0993125, 0, 0, 0, 0.0993125, 0, -0.744387, 0 )
+transform = Transform( 0.0993125, 0, 0, 0, 0.0993125, 0, 0, 0, 0.0993125, 0, -0.650675, 0 )
 
 [node name="wheel" type="Spatial" parent="char"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.79784, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="char/wheel"]
-
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
-skeleton = NodePath("..")
-material/0 = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="weapon_box" type="MeshInstance" parent="char"]
-
-transform = Transform( 0.855452, 0, 0, 0, 0.0692368, 0.852646, 0, -0.852646, 0.0692368, 0, 12.6907, 9.09481 )
-visible = false
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
-skeleton = NodePath("..")
-material/0 = null
-
 [node name="hang_shape" type="CollisionShape" parent="."]
 
-transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.0147561, 0.567371, 0.496943 )
-shape = SubResource( 2 )
+transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.0147561, 0.437105, 0.418355 )
+shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.249409, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="floor_lock" type="RayCast" parent="."]
 
 enabled = true
-cast_to = Vector3( 0, -0.71, 0 )
+cast_to = Vector3( 0, -0.75, 0 )
 collision_mask = 1
-type_mask = 1
 
 [node name="wall_grab_R" type="RayCast" parent="."]
 
-transform = Transform( 1, 0, 0, 0, 0.885198, 0.465215, 0, -0.465215, 0.885198, -0.342441, 0.541584, 0.305202 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.342441, 0.411318, 0.523408 )
 enabled = true
 cast_to = Vector3( 0, -0.7, 0 )
 collision_mask = 1
-type_mask = 1
 
 [node name="wall_grab_L" type="RayCast" parent="."]
 
-transform = Transform( 1, 0, 0, 0, 0.885198, 0.465215, 0, -0.465215, 0.885198, 0.352817, 0.541584, 0.305202 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352817, 0.411318, 0.523408 )
 enabled = true
 cast_to = Vector3( 0, -0.7, 0 )
 collision_mask = 1
-type_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="input_cirlce" type="Node2D" parent="."]
+[node name="input_cirlce_L" type="Node2D" parent="."]
 
-script = ExtResource( 4 )
+script = ExtResource( 3 )
+action = "player_action_left"
+max_drag_length = 256
+
+[node name="input_cirlce_R" type="Node2D" parent="."]
+
+script = ExtResource( 3 )
+action = "player_action_right"
+max_drag_length = 256
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521368, 0 )
+aabb = AABB( -0.254035, -0.414627, -0.361775, 0.50807, 0.829255, 0.72355 )
+
+[connection signal="action" from="input_cirlce_L" to="." method="_on_input_cirlce_L_action"]
+
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="remove_tactical"]
 
 

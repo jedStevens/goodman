@@ -1,0 +1,15 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/nudes_text.obj-4acf11952541a5077058b7b55780de35.mesh"
+
+[deps]
+
+files=[ "res://.import/nudes_text.obj-4acf11952541a5077058b7b55780de35.mesh" ]
+
+source_md5="0e87ee8c293f00de95ee7a0c135d9088"
+
+[params]
+
+generate_tangents=true

@@ -5,6 +5,10 @@ type="StreamTexture"
 path.s3tc="res://.import/tree_rings.png-9d9bdc476bf2775923cf619897a35d73.s3tc.stex"
 path.etc2="res://.import/tree_rings.png-9d9bdc476bf2775923cf619897a35d73.etc2.stex"
 
+[deps]
+
+source_md5="906fd4048241f40cfff101e4a5f81561"
+
 [params]
 
 compress/mode=2

@@ -4,6 +4,10 @@ importer="scene"
 type="PackedScene"
 path="res://.import/stairs.gltf-5e5e73c6063bc2b95c1fd8e37d162017.scn"
 
+[deps]
+
+source_md5="5565a9885b2a1586a1c266f1e71da0a0"
+
 [params]
 
 nodes/root_type="Spatial"
