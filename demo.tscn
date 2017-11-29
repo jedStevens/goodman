@@ -14,33 +14,33 @@ size = Vector2( 40, 40 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=3]
 
 size = Vector3( 10, 6, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="ConvexPolygonShape" id=5]
+[sub_resource type="ConvexPolygonShape" id=4]
 
 points = PoolVector3Array( -5, 3, 1, 5, 3, -1, 5, 3, 1, -5, 3, -1, -5, -3, 1, 5, -3, -1, 5, -3, 1, -5, -3, -1, 5, 3, 1, -5, 3, -1, 5, 3, -1, -5, 3, 1, 5, -3, 1, -5, -3, -1, 5, -3, -1, -5, -3, 1, 5, 3, 1, -5, -3, 1, -5, 3, 1, 5, -3, 1, 5, 3, -1, -5, -3, -1, -5, 3, -1, 5, -3, -1 )
 
-[sub_resource type="CubeMesh" id=6]
+[sub_resource type="CubeMesh" id=5]
 
 size = Vector3( 0.8, 5, 0.1 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=6]
 
 extents = Vector3( 0.4, 2.5, 0.05 )
 
-[sub_resource type="ConvexPolygonShape" id=8]
+[sub_resource type="ConvexPolygonShape" id=7]
 
 points = PoolVector3Array( -0.399902, 2.5, 0.0499878, 0.399902, 2.5, -0.0499878, 0.399902, 2.5, 0.0499878, -0.399902, 2.5, -0.0499878, -0.399902, -2.5, 0.0499878, 0.399902, -2.5, -0.0499878, 0.399902, -2.5, 0.0499878, -0.399902, -2.5, -0.0499878, 0.399902, 2.5, 0.0499878, -0.399902, 2.5, -0.0499878, 0.399902, 2.5, -0.0499878, -0.399902, 2.5, 0.0499878, 0.399902, -2.5, 0.0499878, -0.399902, -2.5, -0.0499878, 0.399902, -2.5, -0.0499878, -0.399902, -2.5, 0.0499878, 0.399902, 2.5, 0.0499878, -0.399902, -2.5, 0.0499878, -0.399902, 2.5, 0.0499878, 0.399902, -2.5, 0.0499878, 0.399902, 2.5, -0.0499878, -0.399902, -2.5, -0.0499878, -0.399902, 2.5, -0.0499878, 0.399902, -2.5, -0.0499878 )
 
-[sub_resource type="GIProbeData" id=9]
+[sub_resource type="GIProbeData" id=8]
 
 bounds = AABB( -22, -10, -15, 44, 20, 30 )
 cell_size = 0.6875
@@ -54,7 +54,7 @@ propagation = 0.7
 interior = false
 compress = false
 
-[sub_resource type="GIProbeData" id=10]
+[sub_resource type="GIProbeData" id=9]
 
 bounds = AABB( -24.3077, -10, -15, 48.6155, 20, 30 )
 cell_size = 0.759617
@@ -74,6 +74,7 @@ compress = false
 "floor",
 ]]
 
+editor/display_folded = true
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 524289
@@ -119,7 +120,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 _sections_unfolded = [ "material" ]
@@ -136,7 +137,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 
@@ -152,7 +153,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 
@@ -168,7 +169,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 
@@ -184,7 +185,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 
@@ -200,7 +201,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 _sections_unfolded = [ "material" ]
@@ -217,7 +218,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 
@@ -233,56 +234,56 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="floor"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3716, 2.10905, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="CollisionShape4" type="CollisionShape" parent="floor"]
 
 transform = Transform( 0.992985, -0.118243, 0, 0.118243, 0.992985, 0, 0, 0, 1, -3.42201, 0.500268, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="CollisionShape3" type="CollisionShape" parent="floor"]
 
 transform = Transform( 0.144831, 0, -0.989456, 0, 1, 0, 0.989456, 0, 0.144831, 20.1145, -1.04854, 0.00193977 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="CollisionShape5" type="CollisionShape" parent="floor"]
 
 transform = Transform( 0.144831, 0, -0.989456, 0, 1, 0, 0.989456, 0, 0.144831, -20.7499, -1.04854, 0.00193977 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="CollisionShape6" type="CollisionShape" parent="floor"]
 
 transform = Transform( 0.144831, 0, -0.989456, 0, 1, 0, 0.989456, 0, 0.144831, -20.0636, -0.0178431, 9.46814 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="CollisionShape10" type="CollisionShape" parent="floor"]
 
 transform = Transform( -0.999851, 0, -0.0172375, 0, 1, 0, 0.0172375, 0, -0.999851, -8.3795, -0.0178431, 19.3845 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="CollisionShape7" type="CollisionShape" parent="floor"]
 
 transform = Transform( 0.144831, 0, -0.989456, 0, 1, 0, 0.989456, 0, 0.144831, -19.5926, -0.0178431, 16.6757 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="CollisionShape9" type="CollisionShape" parent="floor"]
 
 transform = Transform( -0.999851, 0, -0.0172375, 0, 1, 0, 0.0172375, 0, -0.999851, -14.5127, -0.0178431, 18.9309 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="player" parent="." instance=ExtResource( 2 )]
@@ -316,14 +317,14 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
+mesh = SubResource( 5 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="ladder2"]
 
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 disabled = false
 
 [node name="ladder3" type="StaticBody" parent="."]
@@ -350,14 +351,14 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
+mesh = SubResource( 5 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="ladder3"]
 
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 disabled = false
 
 [node name="entry" type="StaticBody" parent="." groups=[
@@ -386,7 +387,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 _sections_unfolded = [ "material" ]
@@ -403,20 +404,20 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 1 )
 
 [node name="CollisionShape8" type="CollisionShape" parent="entry"]
 
 transform = Transform( -0.999851, 0, -0.0172375, 0, 1, 0, 0.0172375, 0, -0.999851, 0.311982, -2.72049, 0.260929 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="CollisionShape11" type="CollisionShape" parent="entry"]
 
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91068e-15, -0.0907478, -0.720977, 5.73948 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = false
 
 [node name="cam_rig" parent="." instance=ExtResource( 3 )]
@@ -446,7 +447,7 @@ bias = 1.5
 normal_bias = 0.0
 interior = false
 compress = false
-data = SubResource( 9 )
+data = SubResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="GIProbe2" type="GIProbe" parent="."]
@@ -462,7 +463,7 @@ bias = 1.5
 normal_bias = 0.0
 interior = false
 compress = false
-data = SubResource( 10 )
+data = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="OmniLight" type="OmniLight" parent="."]

@@ -1,33 +1,20 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://menu_panel.gd" type="Script" id=1]
-[ext_resource path="res://PR Viking.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://obj/title.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://tilt_arm.gd" type="Script" id=4]
-[ext_resource path="res://torch.gd" type="Script" id=5]
-[ext_resource path="res://main_menu_env.tres" type="Environment" id=6]
-[ext_resource path="res://src/3d/title_mountain.obj" type="ArrayMesh" id=7]
-[ext_resource path="res://src/mountain_alb.png" type="Texture" id=8]
-[ext_resource path="res://src/mountain_ao.png" type="Texture" id=9]
-[ext_resource path="res://src/mountain_e.png" type="Texture" id=10]
-[ext_resource path="res://src/mountain_n.png" type="Texture" id=11]
-[ext_resource path="res://src/mountain_alpha.png" type="Texture" id=12]
-[ext_resource path="res://turntable.gd" type="Script" id=13]
-[ext_resource path="res://src/ogg/Rok Nardin - Hell Rising - WoR Version.ogg" type="AudioStream" id=14]
+[ext_resource path="res://obj/title.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://tilt_arm.gd" type="Script" id=3]
+[ext_resource path="res://torch.gd" type="Script" id=4]
+[ext_resource path="res://main_menu_env.tres" type="Environment" id=5]
+[ext_resource path="res://src/3d/title_mountain.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://src/mountain_alb.png" type="Texture" id=7]
+[ext_resource path="res://src/mountain_ao.png" type="Texture" id=8]
+[ext_resource path="res://src/mountain_e.png" type="Texture" id=9]
+[ext_resource path="res://src/mountain_n.png" type="Texture" id=10]
+[ext_resource path="res://src/mountain_alpha.png" type="Texture" id=11]
+[ext_resource path="res://turntable.gd" type="Script" id=12]
+[ext_resource path="res://src/ogg/Rok Nardin - Hell Rising - WoR Version.ogg" type="AudioStream" id=13]
 
-[sub_resource type="DynamicFont" id=2]
-
-size = 32
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 2 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="ButtonGroup" id=1]
-
-resource_local_to_scene = true
-
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
 flags_transparent = false
@@ -81,7 +68,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Emission" ]
 
-[sub_resource type="GIProbeData" id=11]
+[sub_resource type="GIProbeData" id=2]
 
 bounds = AABB( -88.4252, -25.5241, -74.4213, 176.85, 51.0482, 148.843 )
 cell_size = 1.38164
@@ -95,7 +82,7 @@ propagation = 0.7
 interior = false
 compress = false
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=3]
 
 render_priority = 0
 flags_transparent = false
@@ -118,7 +105,7 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 0 )
-albedo_texture = ExtResource( 8 )
+albedo_texture = ExtResource( 7 )
 metallic = 0.0
 metallic_specular = 0.98
 metallic_texture_channel = 0
@@ -128,10 +115,10 @@ emission_enabled = true
 emission = Color( 0, 0, 0, 1 )
 emission_energy = 0.0
 emission_operator = 0
-emission_texture = ExtResource( 10 )
+emission_texture = ExtResource( 9 )
 normal_enabled = true
 normal_scale = -0.5
-normal_texture = ExtResource( 11 )
+normal_texture = ExtResource( 10 )
 rim_enabled = true
 rim = 0.02
 rim_tint = 0.74
@@ -139,16 +126,16 @@ clearcoat_enabled = false
 anisotropy_enabled = false
 ao_enabled = true
 ao_light_affect = 0.0
-ao_texture = ExtResource( 9 )
+ao_texture = ExtResource( 8 )
 ao_on_uv2 = false
 ao_texture_channel = 0
 depth_enabled = false
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.47
-subsurf_scatter_texture = ExtResource( 10 )
+subsurf_scatter_texture = ExtResource( 9 )
 transmission_enabled = true
 transmission = Color( 0.640625, 0.696777, 1, 1 )
-transmission_texture = ExtResource( 12 )
+transmission_texture = ExtResource( 11 )
 refraction_enabled = false
 detail_enabled = false
 uv1_scale = Vector3( 1, 1, 1 )
@@ -163,13 +150,13 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Ambient Occlusion", "Clearcoat", "Emission", "Flags", "Metallic", "Parameters", "Roughness", "Subsurf Scatter", "Transmission", "Vertex Color" ]
 
-[sub_resource type="PlaneMesh" id=10]
+[sub_resource type="PlaneMesh" id=4]
 
 size = Vector2( 2, 2 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=5]
 
 resource_name = "auto"
 length = 3.6
@@ -198,9 +185,8 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 5.46089, -28.1973 ), Vector3( 0, 4.66699, -6.22728 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 
-resource_name = "auto"
 length = 0.1
 loop = false
 step = 0.1
@@ -261,26 +247,27 @@ size_flags_vertical = 1
 use_top_left = false
 script = ExtResource( 1 )
 
-[node name="TabContainer" type="TabContainer" parent="menu_panel"]
+[node name="tabs" type="TabContainer" parent="menu_panel"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 397.0
-margin_top = 275.0
-margin_right = 628.0
-margin_bottom = 327.0
+margin_left = 320.0
+margin_top = 255.0
+margin_right = 704.0
+margin_bottom = 347.0
+rect_min_size = Vector2( 384, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 tab_align = 1
-tabs_visible = true
-_sections_unfolded = [ "custom_styles" ]
+tabs_visible = false
+_sections_unfolded = [ "Rect", "custom_styles" ]
 
-[node name="main" type="VBoxContainer" parent="menu_panel/TabContainer"]
+[node name="main" type="VBoxContainer" parent="menu_panel/tabs"]
 
 visible = false
 anchor_left = 0.0
@@ -288,7 +275,6 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 24.0
 margin_right = -4.0
 margin_bottom = -4.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -298,120 +284,266 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="play" type="Button" parent="menu_panel/TabContainer/main"]
+[node name="solo" type="Button" parent="menu_panel/tabs/main"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 151.0
-margin_bottom = 40.0
+margin_right = 492.0
+margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_disabled = Color( 0.347656, 0.347656, 0.347656, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-group = SubResource( 1 )
-text = "Go To WoR"
-flat = true
-_sections_unfolded = [ "custom_fonts" ]
+group = null
+text = "Single Player"
+flat = false
 
-[node name="characters" type="Button" parent="menu_panel/TabContainer/main"]
+[node name="fighters" type="Button" parent="menu_panel/tabs/main"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 44.0
-margin_right = 151.0
-margin_bottom = 84.0
+margin_right = 12.0
+margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_disabled = Color( 0.347656, 0.347656, 0.347656, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-group = SubResource( 1 )
+group = null
 text = "Fighters"
-flat = true
+flat = false
 
-[node name="settings" type="Button" parent="menu_panel/TabContainer/main"]
+[node name="settings" type="Button" parent="menu_panel/tabs/main"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 88.0
-margin_right = 151.0
-margin_bottom = 128.0
+margin_top = 24.0
+margin_right = 492.0
+margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_disabled = Color( 0.347656, 0.347656, 0.347656, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-group = SubResource( 1 )
+group = null
 text = "Settings"
-flat = true
+flat = false
 
-[node name="tuts" type="Button" parent="menu_panel/TabContainer/main"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 132.0
-margin_right = 151.0
-margin_bottom = 172.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_disabled = Color( 0.347656, 0.347656, 0.347656, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = SubResource( 1 )
-text = "Tutorials"
-flat = true
-
-[node name="settings" type="VBoxContainer" parent="menu_panel/TabContainer"]
+[node name="solo" type="VBoxContainer" parent="menu_panel/tabs"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_right = -284.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Anchor", "Margin", "Mouse", "Rect", "Size Flags" ]
+
+[node name="Label" type="Label" parent="menu_panel/tabs/solo"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 96.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Single Player"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="levels" type="VBoxContainer" parent="menu_panel/tabs/solo"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 18.0
+margin_right = 96.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="Label" type="Label" parent="menu_panel/tabs/solo/levels"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 96.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.566406, 0.566406, 0.566406, 1 )
+text = "No levels yet..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="back" type="Button" parent="menu_panel/tabs/solo"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 36.0
+margin_right = 96.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+
+[node name="fighters" type="VBoxContainer" parent="menu_panel/tabs"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Label" type="Label" parent="menu_panel/tabs/fighters"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 18.0
+margin_right = 492.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Fighter Managment"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="fighters" type="VBoxContainer" parent="menu_panel/tabs/fighters"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 124.0
+margin_right = 492.0
+margin_bottom = 208.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 1
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Label" type="Label" parent="menu_panel/tabs/fighters/fighters"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 492.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.566406, 0.566406, 0.566406, 1 )
+text = "No fighters yet..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="back" type="Button" parent="menu_panel/tabs/fighters"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 236.0
+margin_right = 492.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+
+[node name="settings" type="VBoxContainer" parent="menu_panel/tabs"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -421,13 +553,14 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="menu_panel/TabContainer/settings"]
+[node name="music_volume" type="HBoxContainer" parent="menu_panel/tabs/settings"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 223.0
+margin_right = 492.0
 margin_bottom = 16.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -436,58 +569,59 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="music_volume" type="HBoxContainer" parent="menu_panel/TabContainer/settings/VBoxContainer"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 223.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-
-[node name="Label" type="Label" parent="menu_panel/TabContainer/settings/VBoxContainer/music_volume"]
+[node name="label" type="Label" parent="menu_panel/tabs/settings/music_volume"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 1.0
-margin_right = 91.0
+margin_right = 240.0
 margin_bottom = 15.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Music Volume"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="HSlider" type="HSlider" parent="menu_panel/TabContainer/settings/VBoxContainer/music_volume"]
+[node name="VSeparator" type="VSeparator" parent="menu_panel/tabs/settings/music_volume"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 95.0
-margin_right = 223.0
+margin_left = 244.0
+margin_right = 248.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="slider" type="HSlider" parent="menu_panel/tabs/settings/music_volume"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 252.0
+margin_right = 492.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 128, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 0
 min_value = 0.0
-max_value = 100.0
-step = 1.0
+max_value = 1.0
+step = 0.05
 page = 0.0
 value = 0.0
 exp_edit = false
@@ -498,7 +632,30 @@ ticks_on_borders = false
 focus_mode = 2
 _sections_unfolded = [ "Rect" ]
 
+[node name="back" type="Button" parent="menu_panel/tabs/settings"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 20.0
+margin_right = 492.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+
 [node name="Spatial" type="Spatial" parent="."]
+
+editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial"]
 
@@ -512,9 +669,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 3 )
+mesh = ExtResource( 2 )
 skeleton = NodePath("..")
-material/0 = SubResource( 13 )
+material/0 = SubResource( 1 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="GIProbe" type="GIProbe" parent="Spatial"]
@@ -530,18 +687,18 @@ bias = 1.5
 normal_bias = 0.0
 interior = false
 compress = false
-data = SubResource( 11 )
+data = SubResource( 2 )
 
 [node name="tilt_arm" type="Spatial" parent="Spatial"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374741, -2.13848, 0 )
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="OmniLight" type="OmniLight" parent="Spatial/tilt_arm"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 5.55699, -10.6862 )
 layers = 1
-light_color = Color( 1, 1, 1, 1 )
+light_color = Color( 0.964844, 0.780697, 0.520111, 1 )
 light_energy = 1.0
 light_indirect_energy = 1.0
 light_negative = false
@@ -549,7 +706,7 @@ light_specular = 0.5
 light_cull_mask = -1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = -0.3
+shadow_bias = 0.06
 shadow_contact = 0.0
 shadow_reverse_cull_face = false
 editor_only = false
@@ -557,7 +714,7 @@ omni_range = 19.687
 omni_attenuation = 2.21914
 omni_shadow_mode = 1
 omni_shadow_detail = 1
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 flux = 0.5
 flicker_rate = 0.1
@@ -572,7 +729,7 @@ far = 100.0
 keep_aspect = 1
 current = true
 cull_mask = 1048575
-environment = ExtResource( 6 )
+environment = ExtResource( 5 )
 h_offset = 0.0
 v_offset = 0.0
 doppler/tracking = 0
@@ -589,10 +746,10 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 7 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
-material/0 = SubResource( 8 )
-script = ExtResource( 13 )
+material/0 = SubResource( 3 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Geometry", "material" ]
 
 [node name="MeshInstance3" type="MeshInstance" parent="Spatial"]
@@ -607,7 +764,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 10 )
+mesh = SubResource( 4 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -617,7 +774,7 @@ _sections_unfolded = [ "Transform" ]
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 root_node = NodePath("..")
-anims/auto = SubResource( 12 )
+anims/auto = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -625,21 +782,35 @@ autoplay = "auto"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 root_node = NodePath("..")
-anims/auto = SubResource( 4 )
+anims/auto = SubResource( 6 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[connection signal="pressed" from="menu_panel/tabs/main/solo" to="menu_panel" method="_on_solo_pressed"]
+
+[connection signal="pressed" from="menu_panel/tabs/main/fighters" to="menu_panel" method="_on_fighters_pressed"]
+
+[connection signal="pressed" from="menu_panel/tabs/main/settings" to="menu_panel" method="_on_settings_pressed"]
+
+[connection signal="pressed" from="menu_panel/tabs/solo/back" to="menu_panel" method="_on_back_pressed"]
+
+[connection signal="pressed" from="menu_panel/tabs/fighters/back" to="menu_panel" method="_on_back_pressed"]
+
+[connection signal="value_changed" from="menu_panel/tabs/settings/music_volume/slider" to="menu_panel" method="_on_music_volume_value_changed"]
+
+[connection signal="pressed" from="menu_panel/tabs/settings/back" to="menu_panel" method="_on_back_pressed"]
 
 

@@ -6,7 +6,7 @@ path="res://.import/goodman.gltf-7cdb59c9cf3fee282cf4865076ca9c99.scn"
 
 [deps]
 
-source_md5="c580c465906dd0336b9c45ddab7272a3"
+source_md5="10585d93896b2cf8b8cf784dc0466e6b"
 
 [params]
 
@@ -20,6 +20,7 @@ materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
 meshes/storage=0
+meshes/light_baking=0
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15

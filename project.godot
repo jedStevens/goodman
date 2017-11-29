@@ -15,6 +15,10 @@ run/main_scene="res://main_menu.tscn"
 boot_splash/image="res://bootsplash.png"
 config/icon="res://splash.png"
 
+[autoload]
+
+wor="*res://wor.gd"
+
 [debug]
 
 settings/fps/force_fps=60

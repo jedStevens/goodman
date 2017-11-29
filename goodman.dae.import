@@ -6,7 +6,7 @@ path="res://.import/goodman.dae-0a51d99b5624d6de09d42ed29d3a1823.scn"
 
 [deps]
 
-source_md5="19d15f73ae7c43362f73a942f29d9baf"
+source_md5="5621f4436fc7b2ab9394ee219834f5ff"
 
 [params]
 
@@ -20,6 +20,7 @@ materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
 meshes/storage=0
+meshes/light_baking=0
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15
