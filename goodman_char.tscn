@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ik_affector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://goodman/anims/crouch.tres" type="Animation" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://goodman/anims/goodman_char.tres" type="Animation" id=6]
 [ext_resource path="res://goodman/anims/stop.tres" type="Animation" id=7]
 [ext_resource path="res://goodman/anims/t_pos.tres" type="Animation" id=8]
+[ext_resource path="res://goodman/anim_tree.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -55,7 +56,7 @@ bones/3/name = "right_toes"
 bones/3/parent = 2
 bones/3/rest = Transform( 0.946111, -0.312513, 0.0849059, 0.322865, 0.930612, -0.172397, -0.0251382, 0.19052, 0.981362, 0, 9.53674e-07, -0.873546 )
 bones/3/enabled = true
-bones/3/bound_childs = [  ]
+bones/3/bound_childs = [ NodePath("r_foot_contact") ]
 bones/4/name = "left_quad"
 bones/4/parent = -1
 bones/4/rest = Transform( 0.000882201, 0.999891, 0.0147511, -0.0590234, -0.0146733, 0.998149, 0.998256, -0.00175123, 0.059004, 1.16126, 0.988582, 0.418891 )
@@ -75,7 +76,7 @@ bones/7/name = "left_toes"
 bones/7/parent = 6
 bones/7/rest = Transform( 0.914514, -0.390123, 0.107084, 0.403101, 0.901136, -0.159571, -0.0342449, 0.189095, 0.981361, 0, 0, -0.873545 )
 bones/7/enabled = true
-bones/7/bound_childs = [  ]
+bones/7/bound_childs = [ NodePath("l_foot_contact") ]
 bones/8/name = "waist"
 bones/8/parent = -1
 bones/8/rest = Transform( 1, 2.38419e-07, 0, 3.70783e-08, -0.155518, -0.987833, -2.35518e-07, 0.987833, -0.155518, 0.301601, 1.0227, 0.230193 )
@@ -115,7 +116,7 @@ bones/15/name = "left_hand"
 bones/15/parent = 14
 bones/15/rest = Transform( 0.382589, 0.923017, 0.040794, -0.920519, 0.384594, -0.0687897, -0.0791832, -0.0112334, 0.996797, -4.76837e-07, -2.38419e-07, -2.98311 )
 bones/15/enabled = true
-bones/15/bound_childs = [  ]
+bones/15/bound_childs = [ NodePath("left_hand_attach") ]
 bones/16/name = "right_bicep"
 bones/16/parent = 9
 bones/16/rest = Transform( -0.0616088, -0.00617269, 0.998082, -0.995684, 0.0699248, -0.0610281, -0.0694139, -0.997533, -0.010454, -1.66145, 0.248465, -2.58608 )
@@ -169,7 +170,7 @@ bone = "right_hand"
 
 [node name="r_foot_contact" type="BoneAttachment" parent="skin/Skeleton"]
 
-transform = Transform( -0.957543, -0.208847, 0.198732, -0.286905, 0.757816, -0.586005, -0.0282167, -0.618143, -0.785561, -0.108866, -2.04434, 6.566 )
+transform = Transform( -0.965347, -0.15236, 0.211878, 0.230619, -0.118032, 0.96586, -0.122149, 0.981252, 0.14908, -0.480938, -0.154403, -6.22332 )
 bone_name = "right_toes"
 
 [node name="right_foot" parent="skin/Skeleton" instance=ExtResource( 1 )]
@@ -180,7 +181,7 @@ bone = "right_foot"
 
 [node name="l_foot_contact" type="BoneAttachment" parent="skin/Skeleton"]
 
-transform = Transform( -0.984404, 0.0614588, 0.164838, 0.175841, 0.372209, 0.91134, -0.00534354, 0.926111, -0.377211, 0.499519, -0.304494, -6.59829 )
+transform = Transform( -0.951388, -0.1521, 0.267818, -0.263806, 0.8512, -0.453723, -0.158956, -0.502319, -0.849946, 0.774697, -2.9917, 6.10361 )
 bone_name = "left_toes"
 
 [node name="left_foot" parent="skin/Skeleton" instance=ExtResource( 1 )]
@@ -191,7 +192,7 @@ bone = "left_foot"
 
 [node name="left_hand_attach" type="BoneAttachment" parent="skin/Skeleton"]
 
-transform = Transform( -0.993958, -0.0746748, 0.0804383, -0.0860683, 0.98508, -0.149017, -0.0681107, -0.15504, -0.985558, 2.64812, 3.89259, 5.52923 )
+transform = Transform( -0.989701, -0.10054, 0.101894, 0.142749, -0.746132, 0.650313, 0.010643, 0.658162, 0.752801, 2.64535, 2.80002, -3.26891 )
 bone_name = "left_hand"
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -212,14 +213,11 @@ blend_times = [  ]
 autoplay = ""
 _sections_unfolded = [ "playback" ]
 
-[node name="anim_tree" type="AnimationTreePlayer" parent="."]
+[node name="anim_tree" parent="." instance=ExtResource( 9 )]
 
-playback_process_mode = 1
-base_path = NodePath("..")
-master_player = NodePath("../anim")
 data = {
 "active": true,
-"connections": [ "anim 5", "scale", 0, "hang_blend", "out", 0, "anim 7", "blend2 3", 0, "anim 6", "blend2 3", 1, "strafe_blend", "idle_b_run", 0, "idle", "idle_b_run", 1, "stop_b_run", "crouch_b", 0, "anim 3", "crouch_b", 1, "fall_blend", "hang_blend", 0, "anim 8", "hang_blend", 1, "idle_b_run", "stop_b_run", 0, "anim", "stop_b_run", 1, "run_seek", "strafe_blend", 0, "blend2 3", "strafe_blend", 1, "run", "run_seek", 0, "crouch_b", "fall_blend", 0, "blend2 2", "fall_blend", 1, "scale", "blend2 2", 0, "anim 4", "blend2 2", 1 ],
+"connections": [ "anim 5", "scale", 0, "hang_blend", "out", 0, "scale", "blend2 2", 0, "anim 4", "blend2 2", 1, "run", "run_seek", 0, "idle_b_run", "stop_b_run", 0, "anim", "stop_b_run", 1, "strafe_blend", "idle_b_run", 0, "idle", "idle_b_run", 1, "crouch_b", "fall_blend", 0, "blend2 2", "fall_blend", 1, "run_seek", "strafe_blend", 0, "blend2 3", "strafe_blend", 1, "fall_blend", "hang_blend", 0, "anim 8", "hang_blend", 1, "anim 7", "blend2 3", 0, "anim 6", "blend2 3", 1, "stop_b_run", "crouch_b", 0, "anim 3", "crouch_b", 1 ],
 "master": NodePath("../anim"),
 "nodes": [ {
 "id": "scale",
@@ -244,21 +242,85 @@ data = {
 "type": "output"
 }, {
 "filter": [  ],
-"from": "run",
-"id": "run",
-"position": Vector2( 130, 12 ),
+"from": "crouch",
+"id": "anim 3",
+"position": Vector2( 667, 159 ),
 "type": "animation"
 }, {
-"blend": 0.54,
+"blend": 0.64,
 "filter": [  ],
-"id": "blend2 3",
-"position": Vector2( 274, 110 ),
+"id": "blend2 2",
+"position": Vector2( 808, 152 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "hang",
+"id": "anim 4",
+"position": Vector2( 236, 376 ),
+"type": "animation"
+}, {
+"id": "run_seek",
+"position": Vector2( 241, 13 ),
+"type": "timeseek"
+}, {
+"filter": [  ],
+"from": "hang",
+"id": "anim 8",
+"position": Vector2( 937, 157 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [ NodePath("skin/skel:left_forearm"), NodePath("skin/skel:left_shoulder"), NodePath("skin/skel:right_bicep"), NodePath("skin/skel:right_hand"), NodePath("skin/skel:right_forearm"), NodePath("skin/skel:right_shoulder"), NodePath("skin/skel:left_bicep"), NodePath("skin/skel:left_hand") ],
+"id": "stop_b_run",
+"position": Vector2( 658, 9 ),
 "type": "blend2"
 }, {
 "blend": 0.0,
 "filter": [  ],
 "id": "idle_b_run",
 "position": Vector2( 534, 5 ),
+"type": "blend2"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "fall_blend",
+"position": Vector2( 951, 9 ),
+"type": "blend2"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "strafe_blend",
+"position": Vector2( 385, 7 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "crouch",
+"id": "anim 6",
+"position": Vector2( 31, 178 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "run",
+"id": "anim 7",
+"position": Vector2( 145, 118 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "run",
+"id": "run",
+"position": Vector2( 130, 12 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "hang_blend",
+"position": Vector2( 1073, 9 ),
+"type": "blend2"
+}, {
+"blend": 0.54,
+"filter": [  ],
+"id": "blend2 3",
+"position": Vector2( 274, 110 ),
 "type": "blend2"
 }, {
 "filter": [  ],
@@ -272,70 +334,6 @@ data = {
 "id": "crouch_b",
 "position": Vector2( 811, 9 ),
 "type": "blend2"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "hang_blend",
-"position": Vector2( 1073, 9 ),
-"type": "blend2"
-}, {
-"filter": [  ],
-"from": "run",
-"id": "anim 7",
-"position": Vector2( 145, 118 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "hang",
-"id": "anim 8",
-"position": Vector2( 937, 157 ),
-"type": "animation"
-}, {
-"blend": 0.0,
-"filter": [ NodePath("skin/skel:left_forearm"), NodePath("skin/skel:right_hand"), NodePath("skin/skel:right_bicep"), NodePath("skin/skel:left_shoulder"), NodePath("skin/skel:right_forearm"), NodePath("skin/skel:right_shoulder"), NodePath("skin/skel:left_hand"), NodePath("skin/skel:left_bicep") ],
-"id": "stop_b_run",
-"position": Vector2( 658, 9 ),
-"type": "blend2"
-}, {
-"filter": [  ],
-"from": "crouch",
-"id": "anim 6",
-"position": Vector2( 31, 178 ),
-"type": "animation"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "strafe_blend",
-"position": Vector2( 385, 7 ),
-"type": "blend2"
-}, {
-"filter": [  ],
-"from": "hang",
-"id": "anim 4",
-"position": Vector2( 236, 376 ),
-"type": "animation"
-}, {
-"id": "run_seek",
-"position": Vector2( 241, 13 ),
-"type": "timeseek"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "fall_blend",
-"position": Vector2( 951, 9 ),
-"type": "blend2"
-}, {
-"blend": 0.64,
-"filter": [  ],
-"id": "blend2 2",
-"position": Vector2( 808, 152 ),
-"type": "blend2"
-}, {
-"filter": [  ],
-"from": "crouch",
-"id": "anim 3",
-"position": Vector2( 667, 159 ),
-"type": "animation"
 } ]
 }
 

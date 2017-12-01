@@ -20,13 +20,11 @@ func resize():
 func set_music_vol():
 	var music_bus = AudioServer.get_bus_index("Music")
 	AudioServer.set_bus_volume_db(music_bus,wor.float2db(wor.music_volume))
-	$tabs/settings/music_volume/slider.value = wor.music_volume
+	$tabs/settings/v/music_volume/slider.value = wor.music_volume
 
 
 func _on_music_volume_value_changed( value ):
 	wor.set_music_vol(value)
-	print("new volume F: ", value)
-
 
 func _on_solo_pressed():
 	$tabs.current_tab = 1
@@ -39,3 +37,6 @@ func _on_settings_pressed():
 
 func _on_back_pressed():
 	$tabs.current_tab = 0
+
+func _on_quit_pressed():
+	get_tree().quit()

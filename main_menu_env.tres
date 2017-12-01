@@ -1,31 +1,17 @@
-[gd_resource type="Environment" load_steps=2 format=2]
+[gd_resource type="Environment" load_steps=3 format=2]
 
-[sub_resource type="ProceduralSky" id=1]
+[ext_resource path="res://src/img/sky_photo4.jpg" type="Texture" id=1]
+
+[sub_resource type="PanoramaSky" id=1]
 
 radiance_size = 4
-sky_top_color = Color( 0, 0, 0, 1 )
-sky_horizon_color = Color( 0.195312, 0.123596, 0.138724, 1 )
-sky_curve = 0.25
-sky_energy = 1.0
-ground_bottom_color = Color( 0.316406, 0.316406, 0.316406, 1 )
-ground_horizon_color = Color( 0.335938, 0.24408, 0.24408, 1 )
-ground_curve = 0.0348221
-ground_energy = 1.0
-sun_color = Color( 1, 1, 1, 1 )
-sun_latitude = 178.24
-sun_longitude = 0.55
-sun_angle_min = 1.0
-sun_angle_max = 100.0
-sun_curve = 0.05
-sun_energy = 16.0
-texture_size = 2
-_sections_unfolded = [ "Ground", "Sky", "Sun" ]
+panorama = ExtResource( 1 )
 
 [resource]
 
-background_mode = 1
+background_mode = 2
 background_sky = SubResource( 1 )
-background_sky_custom_fov = 0.8
+background_sky_custom_fov = 0.0
 background_color = Color( 0.0273438, 0.0273438, 0.0273438, 1 )
 background_energy = 1.0
 background_canvas_max_layer = 0

@@ -1,0 +1,130 @@
+[gd_scene format=2]
+
+[node name="anim_tree" type="AnimationTreePlayer"]
+
+playback_process_mode = 1
+base_path = NodePath("..")
+master_player = NodePath("")
+data = {
+"active": true,
+"connections": [ "anim 5", "scale", 0, "hang_blend", "out", 0, "scale", "blend2 2", 0, "anim 4", "blend2 2", 1, "run", "run_seek", 0, "idle_b_run", "stop_b_run", 0, "anim", "stop_b_run", 1, "strafe_blend", "idle_b_run", 0, "idle", "idle_b_run", 1, "crouch_b", "fall_blend", 0, "blend2 2", "fall_blend", 1, "run_seek", "strafe_blend", 0, "blend2 3", "strafe_blend", 1, "fall_blend", "hang_blend", 0, "anim 8", "hang_blend", 1, "anim 7", "blend2 3", 0, "anim 6", "blend2 3", 1, "stop_b_run", "crouch_b", 0, "anim 3", "crouch_b", 1 ],
+"master": NodePath(""),
+"nodes": [ {
+"id": "scale",
+"position": Vector2( 320, 260 ),
+"scale": 0.8,
+"type": "timescale"
+}, {
+"animation": null,
+"filter": [  ],
+"id": "idle",
+"position": Vector2( 394, 142 ),
+"type": "animation"
+}, {
+"animation": null,
+"filter": [  ],
+"id": "anim",
+"position": Vector2( 535, 143 ),
+"type": "animation"
+}, {
+"id": "out",
+"position": Vector2( 1219, 5 ),
+"type": "output"
+}, {
+"animation": null,
+"filter": [  ],
+"id": "anim 3",
+"position": Vector2( 667, 159 ),
+"type": "animation"
+}, {
+"blend": 0.64,
+"filter": [  ],
+"id": "blend2 2",
+"position": Vector2( 808, 152 ),
+"type": "blend2"
+}, {
+"animation": null,
+"filter": [  ],
+"id": "anim 4",
+"position": Vector2( 236, 376 ),
+"type": "animation"
+}, {
+"id": "run_seek",
+"position": Vector2( 241, 13 ),
+"type": "timeseek"
+}, {
+"animation": null,
+"filter": [  ],
+"id": "anim 8",
+"position": Vector2( 937, 157 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [ NodePath("skin/skel:left_forearm"), NodePath("skin/skel:left_shoulder"), NodePath("skin/skel:right_bicep"), NodePath("skin/skel:right_hand"), NodePath("skin/skel:right_forearm"), NodePath("skin/skel:right_shoulder"), NodePath("skin/skel:left_bicep"), NodePath("skin/skel:left_hand") ],
+"id": "stop_b_run",
+"position": Vector2( 658, 9 ),
+"type": "blend2"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "idle_b_run",
+"position": Vector2( 534, 5 ),
+"type": "blend2"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "fall_blend",
+"position": Vector2( 951, 9 ),
+"type": "blend2"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "strafe_blend",
+"position": Vector2( 385, 7 ),
+"type": "blend2"
+}, {
+"animation": null,
+"filter": [  ],
+"id": "anim 6",
+"position": Vector2( 31, 178 ),
+"type": "animation"
+}, {
+"animation": null,
+"filter": [  ],
+"id": "anim 7",
+"position": Vector2( 145, 118 ),
+"type": "animation"
+}, {
+"animation": null,
+"filter": [  ],
+"id": "run",
+"position": Vector2( 130, 12 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "hang_blend",
+"position": Vector2( 1073, 9 ),
+"type": "blend2"
+}, {
+"blend": 0.54,
+"filter": [  ],
+"id": "blend2 3",
+"position": Vector2( 274, 110 ),
+"type": "blend2"
+}, {
+"animation": null,
+"filter": [  ],
+"id": "anim 5",
+"position": Vector2( 189, 259 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "crouch_b",
+"position": Vector2( 811, 9 ),
+"type": "blend2"
+} ]
+}
+
+
