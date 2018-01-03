@@ -6,7 +6,11 @@ path="res://.import/pexels-photo-109243.jpeg-d35368d4a0b8168c1f6b202aa57f4d5f.st
 
 [deps]
 
+source_file="res://src/img/pexels-photo-109243.jpeg"
 source_md5="c7e40cc865411ca54a5585fc57369976"
+
+dest_files=[ "res://.import/pexels-photo-109243.jpeg-d35368d4a0b8168c1f6b202aa57f4d5f.stex" ]
+dest_md5="cd1a89b0494426199fe15ab8e30d3829"
 
 [params]
 

@@ -208,7 +208,7 @@ func _physics_process(delta):
 	get_node("char/anim_tree").blend2_node_set_amount("fall_blend", lerp(old_fall_blend, new_fall_blend, delta * (1/fall_blend_lerp_time)))
 	########
 	
-	velocity = move_and_slide(velocity, Vector3(0,1,0),0.1,5,deg2rad(60))
+	velocity = move_and_slide(velocity, Vector3(0,1,0),0.1,5,deg2rad(30))
 	
 	var col_count = get_slide_count()
 	for i in range(col_count):
@@ -265,15 +265,16 @@ func _physics_process(delta):
 	get_node("char/anim_tree").blend2_node_set_amount("hang_blend", new_hang_blend)
 
 func get_hang_normal():
+	return false
 	if not is_wall_hanging():
 		return false
 	
 	var good_hang = false
 	if $wall_grab_R.is_colliding():
-		if $wall_grab_R.get_collision_normal().angle_to(Vector3(0,1,0)) < deg2rad(25):
+		if $wall_grab_R.get_collision_normal().angle_to(Vector3(0,1,0)) < deg2rad(15):
 			good_hang = true
 	if $wall_grab_L.is_colliding():
-		if $wall_grab_L.get_collision_normal().angle_to(Vector3(0,1,0)) < deg2rad(25):
+		if $wall_grab_L.get_collision_normal().angle_to(Vector3(0,1,0)) < deg2rad(15):
 			good_hang = true
 	return good_hang
 
@@ -341,6 +342,7 @@ func is_touching_floor():
 	return false
 
 func is_wall_hanging():
+	return false
 	if (get_node("wall_grab_L").is_colliding() or get_node("wall_grab_R").is_colliding()) and not is_touching_floor():
 		return true
 	return false
