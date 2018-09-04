@@ -6,12 +6,14 @@ path="res://.import/goodman_idle.obj-6747ee68af940a05cfcbb8ed226d7fec.scn"
 
 [deps]
 
-source_md5="75dde9cda48262dfadf91f9af9cac792"
+source_file="res://goodman_idle.obj"
+dest_files=[ "res://.import/goodman_idle.obj-6747ee68af940a05cfcbb8ed226d7fec.scn" ]
 
 [params]
 
 nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
+nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
 materials/location=1
@@ -20,11 +22,14 @@ materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
 meshes/storage=0
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15
 animation/filter_script=""
 animation/storage=false
+animation/keep_custom_tracks=false
 animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05
 animation/optimizer/max_angular_error=0.01

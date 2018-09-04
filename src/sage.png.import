@@ -7,7 +7,8 @@ path.etc2="res://.import/sage.png-852a2cfb652846884a58aa0098a0b02c.etc2.stex"
 
 [deps]
 
-source_md5="59b745f942f11f25ebe760ea3caf852d"
+source_file="res://src/sage.png"
+dest_files=[ "res://.import/sage.png-852a2cfb652846884a58aa0098a0b02c.s3tc.stex", "res://.import/sage.png-852a2cfb652846884a58aa0098a0b02c.etc2.stex" ]
 
 [params]
 

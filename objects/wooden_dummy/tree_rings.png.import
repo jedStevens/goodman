@@ -7,7 +7,8 @@ path.etc2="res://.import/tree_rings.png-9d9bdc476bf2775923cf619897a35d73.etc2.st
 
 [deps]
 
-source_md5="906fd4048241f40cfff101e4a5f81561"
+source_file="res://objects/wooden_dummy/tree_rings.png"
+dest_files=[ "res://.import/tree_rings.png-9d9bdc476bf2775923cf619897a35d73.s3tc.stex", "res://.import/tree_rings.png-9d9bdc476bf2775923cf619897a35d73.etc2.stex" ]
 
 [params]
 

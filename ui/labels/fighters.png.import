@@ -6,7 +6,8 @@ path="res://.import/fighters.png-6885808c624b3c5124eee45676c235c9.stex"
 
 [deps]
 
-source_md5="42ea57b4e57e8334631f7d827c541283"
+source_file="res://ui/labels/fighters.png"
+dest_files=[ "res://.import/fighters.png-6885808c624b3c5124eee45676c235c9.stex" ]
 
 [params]
 

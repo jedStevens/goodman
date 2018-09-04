@@ -6,7 +6,8 @@ path="res://.import/normal.png-136c1c51bba00a9ec3532434071400da.stex"
 
 [deps]
 
-source_md5="ec46162e78c01e055064060534b985ad"
+source_file="res://ui/buttons/back/normal.png"
+dest_files=[ "res://.import/normal.png-136c1c51bba00a9ec3532434071400da.stex" ]
 
 [params]
 

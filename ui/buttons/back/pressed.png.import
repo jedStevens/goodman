@@ -6,7 +6,8 @@ path="res://.import/pressed.png-54f95abca4e32382d9ca23be0d39614d.stex"
 
 [deps]
 
-source_md5="35fc2f152aefab1e3b95beb31fb3dcf8"
+source_file="res://ui/buttons/back/pressed.png"
+dest_files=[ "res://.import/pressed.png-54f95abca4e32382d9ca23be0d39614d.stex" ]
 
 [params]
 

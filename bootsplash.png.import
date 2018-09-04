@@ -6,7 +6,8 @@ path="res://.import/bootsplash.png-30e2c9990faa42442c2d12c3b0f7ed9a.stex"
 
 [deps]
 
-source_md5="53216d976f04be6252120e4f4f054785"
+source_file="res://bootsplash.png"
+dest_files=[ "res://.import/bootsplash.png-30e2c9990faa42442c2d12c3b0f7ed9a.stex" ]
 
 [params]
 

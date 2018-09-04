@@ -6,7 +6,8 @@ path="res://.import/splash.png-929ed8a00b89ba36c51789452f874c77.stex"
 
 [deps]
 
-source_md5="6c5d0b1ae76965e1e07497821350c5de"
+source_file="res://splash.png"
+dest_files=[ "res://.import/splash.png-929ed8a00b89ba36c51789452f874c77.stex" ]
 
 [params]
 

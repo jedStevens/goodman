@@ -8,8 +8,10 @@ path="res://.import/nudes_text.obj-4acf11952541a5077058b7b55780de35.mesh"
 
 files=[ "res://.import/nudes_text.obj-4acf11952541a5077058b7b55780de35.mesh" ]
 
-source_md5="0e87ee8c293f00de95ee7a0c135d9088"
+source_file="res://wip/nudes_text.obj"
+dest_files=[ "res://.import/nudes_text.obj-4acf11952541a5077058b7b55780de35.mesh", "res://.import/nudes_text.obj-4acf11952541a5077058b7b55780de35.mesh" ]
 
 [params]
 
 generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

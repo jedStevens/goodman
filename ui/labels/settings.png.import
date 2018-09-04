@@ -6,7 +6,8 @@ path="res://.import/settings.png-d94d8ef366e8bd9a32b5b0ada13b0ac8.stex"
 
 [deps]
 
-source_md5="4bac4f67b7383af7f18dcc472812a283"
+source_file="res://ui/labels/settings.png"
+dest_files=[ "res://.import/settings.png-d94d8ef366e8bd9a32b5b0ada13b0ac8.stex" ]
 
 [params]
 

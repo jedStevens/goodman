@@ -7,7 +7,8 @@ path.etc2="res://.import/T_Cave_Ice_Noise_N.jpg-3835a9db74795123eef984e555a1dfe2
 
 [deps]
 
-source_md5="60dfb4991747592c75cbd41d0553282b"
+source_file="res://src/img/T_Cave_Ice_Noise_N.jpg"
+dest_files=[ "res://.import/T_Cave_Ice_Noise_N.jpg-3835a9db74795123eef984e555a1dfe2.s3tc.stex", "res://.import/T_Cave_Ice_Noise_N.jpg-3835a9db74795123eef984e555a1dfe2.etc2.stex" ]
 
 [params]
 

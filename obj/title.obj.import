@@ -8,8 +8,10 @@ path="res://.import/title.obj-3fb828aaada5d8013e16f855f5962508.mesh"
 
 files=[ "res://.import/title.obj-3fb828aaada5d8013e16f855f5962508.mesh" ]
 
-source_md5="fc9e5a2f76fbf5bec229acb2a460ab95"
+source_file="res://obj/title.obj"
+dest_files=[ "res://.import/title.obj-3fb828aaada5d8013e16f855f5962508.mesh", "res://.import/title.obj-3fb828aaada5d8013e16f855f5962508.mesh" ]
 
 [params]
 
 generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

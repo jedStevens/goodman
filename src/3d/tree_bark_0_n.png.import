@@ -6,7 +6,8 @@ path="res://.import/tree_bark_0_n.png-08db5549b406549b5b980923caa7d31f.stex"
 
 [deps]
 
-source_md5="6ce020051eb83dde3bc65c234c16865d"
+source_file="res://src/3d/tree_bark_0_n.png"
+dest_files=[ "res://.import/tree_bark_0_n.png-08db5549b406549b5b980923caa7d31f.stex" ]
 
 [params]
 

@@ -119,6 +119,10 @@ flags_no_depth_test = false
 flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 1
@@ -129,6 +133,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -141,6 +146,7 @@ emission_enabled = true
 emission = Color( 1, 0.09375, 0, 1 )
 emission_energy = 2.55
 emission_operator = 0
+emission_on_uv2 = false
 normal_enabled = false
 rim_enabled = false
 clearcoat_enabled = false
@@ -160,7 +166,7 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Emission", "Flags", "Parameters", "Vertex Color" ]
 
 [sub_resource type="GIProbeData" id=8]
@@ -187,6 +193,10 @@ flags_no_depth_test = false
 flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -197,6 +207,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
+params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 0 )
@@ -210,6 +221,7 @@ emission_enabled = true
 emission = Color( 0, 0, 0, 1 )
 emission_energy = 0.0
 emission_operator = 0
+emission_on_uv2 = false
 emission_texture = ExtResource( 36 )
 normal_enabled = true
 normal_scale = 0.15
@@ -244,7 +256,7 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_mode = 0
 _sections_unfolded = [ "Albedo", "Ambient Occlusion", "Detail", "Emission", "Flags", "Metallic", "NormalMap", "Parameters", "Rim", "Roughness", "Subsurf Scatter", "Transmission", "Vertex Color" ]
 
 [sub_resource type="Animation" id=10]
@@ -257,6 +269,7 @@ tracks/0/path = NodePath("MeshInstance:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 3, 3.2 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -268,6 +281,7 @@ tracks/1/path = NodePath("MeshInstance:translation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 3, 3.2 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -285,6 +299,7 @@ tracks/0/path = NodePath("AudioStreamPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -298,6 +313,7 @@ tracks/1/path = NodePath("Spatial/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -308,7 +324,6 @@ tracks/1/keys = {
 }
 
 [node name="Control" type="Control"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -318,11 +333,11 @@ margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
 [node name="menu_panel" type="CenterContainer" parent="."]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -332,34 +347,34 @@ margin_bottom = 603.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 use_top_left = false
 script = ExtResource( 1 )
 
 [node name="tabs" type="TabContainer" parent="menu_panel"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 381.0
-margin_top = 158.0
-margin_right = 643.0
-margin_bottom = 444.0
+margin_left = 313.0
+margin_top = 222.0
+margin_right = 711.0
+margin_bottom = 380.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_styles/panel = SubResource( 1 )
 tab_align = 1
 tabs_visible = false
+drag_to_rearrange_enabled = false
 _sections_unfolded = [ "Rect", "custom_styles" ]
 
 [node name="main" type="GridContainer" parent="menu_panel/tabs"]
-
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -372,13 +387,13 @@ rect_min_size = Vector2( 392, 128 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 columns = 2
 _sections_unfolded = [ "Anchor", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="solo" type="TextureButton" parent="menu_panel/tabs/main"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -387,7 +402,9 @@ margin_right = 194.0
 margin_bottom = 62.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 6
 size_flags_vertical = 1
 toggle_mode = false
@@ -402,7 +419,6 @@ stretch_mode = 4
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="fighters" type="TextureButton" parent="menu_panel/tabs/main"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -412,7 +428,9 @@ margin_right = 392.0
 margin_bottom = 62.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 1
 toggle_mode = false
@@ -426,7 +444,6 @@ texture_disabled = ExtResource( 10 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="settings" type="TextureButton" parent="menu_panel/tabs/main"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -436,7 +453,9 @@ margin_right = 194.0
 margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 1
 toggle_mode = false
@@ -451,7 +470,6 @@ stretch_mode = 4
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="quit" type="TextureButton" parent="menu_panel/tabs/main"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -462,7 +480,9 @@ margin_right = 392.0
 margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -476,7 +496,6 @@ texture_disabled = ExtResource( 18 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="solo" type="Control" parent="menu_panel/tabs"]
-
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -490,12 +509,12 @@ rect_min_size = Vector2( 256, 256 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin", "Mouse", "Rect", "Size Flags" ]
 
 [node name="Label" type="TextureRect" parent="menu_panel/tabs/solo"]
-
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -506,13 +525,13 @@ margin_bottom = 25.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 texture = ExtResource( 19 )
 stretch_mode = 0
 
 [node name="levels" type="VBoxContainer" parent="menu_panel/tabs/solo"]
-
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -524,13 +543,13 @@ margin_bottom = 7.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
 [node name="Label" type="Label" parent="menu_panel/tabs/solo/levels"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -540,6 +559,7 @@ margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 20 )
@@ -551,7 +571,6 @@ max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="back" type="TextureButton" parent="menu_panel/tabs/solo"]
-
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -562,7 +581,9 @@ margin_right = 96.0
 margin_bottom = -8.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -577,7 +598,6 @@ stretch_mode = 5
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Textures" ]
 
 [node name="fighters" type="Control" parent="menu_panel/tabs"]
-
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -591,12 +611,12 @@ rect_min_size = Vector2( 256, 256 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
 [node name="Label" type="TextureRect" parent="menu_panel/tabs/fighters"]
-
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -607,13 +627,13 @@ margin_bottom = 26.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 texture = ExtResource( 25 )
 stretch_mode = 3
 
 [node name="fighters" type="VBoxContainer" parent="menu_panel/tabs/fighters"]
-
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -625,13 +645,13 @@ margin_bottom = 7.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
 alignment = 0
 _sections_unfolded = [ "Size Flags" ]
 
 [node name="Label" type="Label" parent="menu_panel/tabs/fighters/fighters"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -641,6 +661,7 @@ margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 20 )
@@ -652,7 +673,6 @@ max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="back" type="TextureButton" parent="menu_panel/tabs/fighters"]
-
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -662,7 +682,9 @@ margin_top = -62.0
 margin_right = 97.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -676,7 +698,7 @@ texture_disabled = ExtResource( 24 )
 _sections_unfolded = [ "Anchor", "Margin", "Textures" ]
 
 [node name="settings" type="Control" parent="menu_panel/tabs"]
-
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -689,12 +711,12 @@ rect_min_size = Vector2( 256, 256 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
 [node name="Label" type="TextureRect" parent="menu_panel/tabs/settings"]
-
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -705,13 +727,13 @@ margin_bottom = 26.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 texture = ExtResource( 26 )
 stretch_mode = 0
 
 [node name="v" type="VBoxContainer" parent="menu_panel/tabs/settings"]
-
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -723,12 +745,12 @@ margin_bottom = 11.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
 [node name="music_volume" type="HBoxContainer" parent="menu_panel/tabs/settings/v"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -738,12 +760,12 @@ margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
 [node name="label" type="Label" parent="menu_panel/tabs/settings/v/music_volume"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -753,6 +775,7 @@ margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 20 )
@@ -764,7 +787,6 @@ max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "Theme", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="slider" type="HSlider" parent="menu_panel/tabs/settings/v/music_volume"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -775,7 +797,9 @@ margin_bottom = 17.0
 rect_min_size = Vector2( 128, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 custom_icons/grabber_highlight = ExtResource( 27 )
@@ -792,14 +816,16 @@ page = 0.0
 value = 0.0
 exp_edit = false
 rounded = false
+allow_greater = false
+allow_lesser = false
 editable = true
+scrollable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
 _sections_unfolded = [ "Rect", "Theme", "custom_icons", "custom_styles" ]
 
 [node name="back" type="TextureButton" parent="menu_panel/tabs/settings"]
-
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -809,7 +835,9 @@ margin_top = -62.0
 margin_right = 97.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 1
 toggle_mode = false
@@ -823,11 +851,9 @@ texture_disabled = ExtResource( 24 )
 _sections_unfolded = [ "Mouse", "Size Flags", "Textures" ]
 
 [node name="Spatial" type="Spatial" parent="."]
-
 transform = Transform( -0.850505, 0, 0.525967, 0, 1, 0, -0.525967, 0, -0.850505, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial"]
-
 transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 5.46089, -39.0634 )
 layers = 2
 material_override = null
@@ -844,7 +870,6 @@ material/0 = SubResource( 7 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="GIProbe" type="GIProbe" parent="Spatial"]
-
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.63463, -50.6885 )
 layers = 1
 subdiv = 1
@@ -859,12 +884,10 @@ compress = false
 data = SubResource( 8 )
 
 [node name="tilt_arm" type="Spatial" parent="Spatial"]
-
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374741, -2.13848, 0 )
 script = ExtResource( 29 )
 
 [node name="OmniLight" type="OmniLight" parent="Spatial/tilt_arm"]
-
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.736158, 5.04839, -10.6636 )
 layers = 1
 light_color = Color( 0.964844, 0.780697, 0.520111, 1 )
@@ -872,6 +895,7 @@ light_energy = 1.0
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
+light_bake_mode = 1
 light_cull_mask = -1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
@@ -889,22 +913,21 @@ flux = 0.5
 flicker_rate = 0.1
 
 [node name="Camera" type="Camera" parent="Spatial/tilt_arm"]
-
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.0538 )
-projection = 0
-fov = 70.0
-near = 0.05
-far = 316.35
 keep_aspect = 1
-current = true
 cull_mask = 1048575
 environment = ExtResource( 31 )
 h_offset = 0.0
 v_offset = 0.0
-doppler/tracking = 0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 316.35
 
 [node name="MeshInstance2" type="MeshInstance" parent="Spatial"]
-
 transform = Transform( 2.53144, 0.247943, 5.20601, 0, 5.78759, -0.275642, -5.2119, 0.120428, 2.52859, 0.374741, -23.623, -28.7248 )
 layers = 1
 material_override = null
@@ -922,49 +945,37 @@ script = ExtResource( 39 )
 _sections_unfolded = [ "Geometry", "material" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spatial"]
-
+root_node = NodePath("..")
+autoplay = "auto"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/auto = SubResource( 10 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = "auto"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
 stream = ExtResource( 40 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
+stream_paused = false
 mix_target = 0
 bus = "Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
+root_node = NodePath("..")
+autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/auto = SubResource( 11 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
 
 [connection signal="pressed" from="menu_panel/tabs/main/solo" to="menu_panel" method="_on_solo_pressed"]
-
 [connection signal="pressed" from="menu_panel/tabs/main/fighters" to="menu_panel" method="_on_fighters_pressed"]
-
 [connection signal="pressed" from="menu_panel/tabs/main/settings" to="menu_panel" method="_on_settings_pressed"]
-
 [connection signal="pressed" from="menu_panel/tabs/main/quit" to="menu_panel" method="_on_quit_pressed"]
-
 [connection signal="pressed" from="menu_panel/tabs/solo/back" to="menu_panel" method="_on_back_pressed"]
-
 [connection signal="pressed" from="menu_panel/tabs/fighters/back" to="menu_panel" method="_on_back_pressed"]
-
 [connection signal="value_changed" from="menu_panel/tabs/settings/v/music_volume/slider" to="menu_panel" method="_on_music_volume_value_changed"]
-
 [connection signal="pressed" from="menu_panel/tabs/settings/back" to="menu_panel" method="_on_back_pressed"]
-
-

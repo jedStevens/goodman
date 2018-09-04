@@ -6,7 +6,8 @@ path="res://.import/ui.jpg-30dd82bfe4a789b95829e85e7b9b6767.stex"
 
 [deps]
 
-source_md5="51c1b96414792324c954145ddef46d38"
+source_file="res://src/img/ui.jpg"
+dest_files=[ "res://.import/ui.jpg-30dd82bfe4a789b95829e85e7b9b6767.stex" ]
 
 [params]
 

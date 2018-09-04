@@ -6,7 +6,8 @@ path="res://.import/light.png-49c045890fcf3efb06bd8f936904adcc.stex"
 
 [deps]
 
-source_md5="7444ee50bc6d4231f116af34c822509b"
+source_file="res://ui/panel/light.png"
+dest_files=[ "res://.import/light.png-49c045890fcf3efb06bd8f936904adcc.stex" ]
 
 [params]
 

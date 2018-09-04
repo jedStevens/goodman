@@ -6,12 +6,14 @@ path="res://.import/stairs.gltf-5e5e73c6063bc2b95c1fd8e37d162017.scn"
 
 [deps]
 
-source_md5="5565a9885b2a1586a1c266f1e71da0a0"
+source_file="res://stairs.gltf"
+dest_files=[ "res://.import/stairs.gltf-5e5e73c6063bc2b95c1fd8e37d162017.scn" ]
 
 [params]
 
 nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
+nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
 materials/location=1
@@ -20,11 +22,14 @@ materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
 meshes/storage=0
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15
 animation/filter_script=""
 animation/storage=false
+animation/keep_custom_tracks=false
 animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05
 animation/optimizer/max_angular_error=0.01

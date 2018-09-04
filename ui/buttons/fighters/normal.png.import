@@ -6,7 +6,8 @@ path="res://.import/normal.png-d7e9d2286199a541f19a20b989d43419.stex"
 
 [deps]
 
-source_md5="ea8723e6154d89e1ebd4b005d29d92a1"
+source_file="res://ui/buttons/fighters/normal.png"
+dest_files=[ "res://.import/normal.png-d7e9d2286199a541f19a20b989d43419.stex" ]
 
 [params]
 

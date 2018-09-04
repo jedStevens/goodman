@@ -7,7 +7,8 @@ path.etc2="res://.import/mountain_alpha.png-de52a6a1b4e22f1d98dc619eccd60938.etc
 
 [deps]
 
-source_md5="e58c64bb5af3d29eac5557da4a69b8cf"
+source_file="res://src/mountain_alpha.png"
+dest_files=[ "res://.import/mountain_alpha.png-de52a6a1b4e22f1d98dc619eccd60938.s3tc.stex", "res://.import/mountain_alpha.png-de52a6a1b4e22f1d98dc619eccd60938.etc2.stex" ]
 
 [params]
 

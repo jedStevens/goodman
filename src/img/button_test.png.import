@@ -6,7 +6,8 @@ path="res://.import/button_test.png-6c0cb3abf098d4d1e3cfd2f880bfe4a1.stex"
 
 [deps]
 
-source_md5="e3681eded57f340882d9fffec1696d97"
+source_file="res://src/img/button_test.png"
+dest_files=[ "res://.import/button_test.png-6c0cb3abf098d4d1e3cfd2f880bfe4a1.stex" ]
 
 [params]
 

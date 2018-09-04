@@ -6,7 +6,8 @@ path="res://.import/disabled.png-2f614898dd15b51531e6c82ee6a1b70d.stex"
 
 [deps]
 
-source_md5="0d9ee1b37b03eb71070c6b63a03d6400"
+source_file="res://ui/buttons/settings/disabled.png"
+dest_files=[ "res://.import/disabled.png-2f614898dd15b51531e6c82ee6a1b70d.stex" ]
 
 [params]
 

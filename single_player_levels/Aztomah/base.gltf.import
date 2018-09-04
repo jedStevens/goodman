@@ -7,10 +7,7 @@ path="res://.import/base.gltf-b7948f74a147016577e69ba96be8fd24.scn"
 [deps]
 
 source_file="res://single_player_levels/Aztomah/base.gltf"
-source_md5="cecd07276a0b6fa521086f6d86d7701a"
-
 dest_files=[ "res://.import/base.gltf-b7948f74a147016577e69ba96be8fd24.scn" ]
-dest_md5="71b325288e6302ea025384ee5a128560"
 
 [params]
 

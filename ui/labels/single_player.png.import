@@ -6,7 +6,8 @@ path="res://.import/single_player.png-e64c81414872ef3304514aede20441e8.stex"
 
 [deps]
 
-source_md5="b2e6b9a6bd3105ee568915fed9116c95"
+source_file="res://ui/labels/single_player.png"
+dest_files=[ "res://.import/single_player.png-e64c81414872ef3304514aede20441e8.stex" ]
 
 [params]
 

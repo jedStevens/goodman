@@ -6,7 +6,8 @@ path="res://.import/dark.png-1d6dd4fc7fba7c852d9b3c95e5ae19ba.stex"
 
 [deps]
 
-source_md5="e19a03c0530d2ed7774d5858c3ab094b"
+source_file="res://ui/panel/dark.png"
+dest_files=[ "res://.import/dark.png-1d6dd4fc7fba7c852d9b3c95e5ae19ba.stex" ]
 
 [params]
 

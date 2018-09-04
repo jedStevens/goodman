@@ -6,7 +6,8 @@ path="res://.import/sky_photo4.jpg-c4b00afd74ae117a950144699f1d0a2d.stex"
 
 [deps]
 
-source_md5="f34330aad8f50b4ae6aa757edba8d439"
+source_file="res://src/img/sky_photo4.jpg"
+dest_files=[ "res://.import/sky_photo4.jpg-c4b00afd74ae117a950144699f1d0a2d.stex" ]
 
 [params]
 

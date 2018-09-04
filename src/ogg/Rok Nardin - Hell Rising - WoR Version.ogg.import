@@ -6,7 +6,8 @@ path="res://.import/Rok Nardin - Hell Rising - WoR Version.ogg-d9f5714fbee978008
 
 [deps]
 
-source_md5="dd465b298a8d6ca8835c4ba17fc3bfbe"
+source_file="res://src/ogg/Rok Nardin - Hell Rising - WoR Version.ogg"
+dest_files=[ "res://.import/Rok Nardin - Hell Rising - WoR Version.ogg-d9f5714fbee97800825d89f70789d9e7.oggstr" ]
 
 [params]
 

@@ -7,7 +7,8 @@ path.etc2="res://.import/xul_face.png-a37ecfcd850deb6576a1931f0e74980e.etc2.stex
 
 [deps]
 
-source_md5="88f376dc3d9950d8a8ac5eb1e43cb4f5"
+source_file="res://src/xul_face.png"
+dest_files=[ "res://.import/xul_face.png-a37ecfcd850deb6576a1931f0e74980e.s3tc.stex", "res://.import/xul_face.png-a37ecfcd850deb6576a1931f0e74980e.etc2.stex" ]
 
 [params]
 

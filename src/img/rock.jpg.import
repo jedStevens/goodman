@@ -6,7 +6,8 @@ path="res://.import/rock.jpg-1724208035321bcae8af32f920eef6c5.stex"
 
 [deps]
 
-source_md5="a049f8362fa762a2a3624a047c0d6ebb"
+source_file="res://src/img/rock.jpg"
+dest_files=[ "res://.import/rock.jpg-1724208035321bcae8af32f920eef6c5.stex" ]
 
 [params]
 

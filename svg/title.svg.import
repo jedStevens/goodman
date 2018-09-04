@@ -6,7 +6,8 @@ path="res://.import/title.svg-28ab38a0b482215daa1448f56666870d.stex"
 
 [deps]
 
-source_md5="58139f2551ab69f80ae18f1c344bcc56"
+source_file="res://svg/title.svg"
+dest_files=[ "res://.import/title.svg-28ab38a0b482215daa1448f56666870d.stex" ]
 
 [params]
 

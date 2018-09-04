@@ -6,7 +6,8 @@ path="res://.import/hover.png-79801b5f10dca4a32aca1a6d92d5ab89.stex"
 
 [deps]
 
-source_md5="5058ef7d9ca729ff5abac8c18dbd6eb9"
+source_file="res://ui/buttons/fighters/hover.png"
+dest_files=[ "res://.import/hover.png-79801b5f10dca4a32aca1a6d92d5ab89.stex" ]
 
 [params]
 

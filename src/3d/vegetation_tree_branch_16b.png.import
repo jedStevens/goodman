@@ -6,7 +6,8 @@ path="res://.import/vegetation_tree_branch_16b.png-b4fbf561d6ada61bfaed92a6ce368
 
 [deps]
 
-source_md5="e0db2fe4e6d8ae7630f9083450b01c38"
+source_file="res://src/3d/vegetation_tree_branch_16b.png"
+dest_files=[ "res://.import/vegetation_tree_branch_16b.png-b4fbf561d6ada61bfaed92a6ce368467.stex" ]
 
 [params]
 

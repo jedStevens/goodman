@@ -7,7 +7,8 @@ path.etc2="res://.import/wood.png-22eeae71a3947de2511502b975fe09a3.etc2.stex"
 
 [deps]
 
-source_md5="dea2989d93a91f997b1dc47b8effe063"
+source_file="res://wearables/masks/wood.png"
+dest_files=[ "res://.import/wood.png-22eeae71a3947de2511502b975fe09a3.s3tc.stex", "res://.import/wood.png-22eeae71a3947de2511502b975fe09a3.etc2.stex" ]
 
 [params]
 
